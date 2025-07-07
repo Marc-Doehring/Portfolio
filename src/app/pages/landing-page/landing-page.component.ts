@@ -18,6 +18,6 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
     PortfolioComponent,
   ],
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.scss']
+  styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent {}
