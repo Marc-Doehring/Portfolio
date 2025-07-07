@@ -26,6 +26,13 @@
   line-height: 1.2;
 }
 
+.abovethefold-content {
+  width: 100%;
+  max-width: 1440px; // oder 1280px je nach Geschmack
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* Optional: auf großen Screens noch größer */
 @media (min-width: 1024px) {
   .text-box h1 {
@@ -36,4 +43,67 @@
     font-size: 2rem;
   }
 }
+
+.button-group {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ghost-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 2px solid white;
+  border-radius: 9999px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    transform: translateX(0%);
+  }
+
+  &:hover {
+    border-color: #26ff9c;
+    color: #26ff9c;
+
+    span {
+      animation: slideLoop 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes slideLoop {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  55% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
 
