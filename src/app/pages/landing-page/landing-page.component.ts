@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../../shared/header/header.component';
+import { FooterComponent } from '../../shared/footer/footer.component';
+import { AbovethefoldComponent } from '../abovethefold/abovethefold.component';
+import { AboutmeComponent } from '../aboutme/aboutme.component';
+import { MyskillsComponent } from '../myskills/myskills.component';
+import { PortfolioComponent } from '../portfolio/portfolio.component';
+
+@Component({
+  selector: 'app-landing-page',
+  standalone: true,
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    AbovethefoldComponent,
+    AboutmeComponent,
+    MyskillsComponent,
+    PortfolioComponent,
+  ],
+  templateUrl: './landing-page.component.html',
+  styleUrls: ['./landing-page.component.scss']
+})
+export class LandingPageComponent {}
