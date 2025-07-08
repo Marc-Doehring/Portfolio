@@ -5,6 +5,7 @@ import { AbovethefoldComponent } from '../abovethefold/abovethefold.component';
 import { AboutmeComponent } from '../aboutme/aboutme.component';
 import { MyskillsComponent } from '../myskills/myskills.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
+import { ContactFormComponent } from '../contactform/contactform.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -16,6 +17,7 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
     AboutmeComponent,
     MyskillsComponent,
     PortfolioComponent,
+    ContactFormComponent,
   ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],

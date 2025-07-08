@@ -1,0 +1,11 @@
+<section id="contact" class="content-wrapper contact-section">
+  <div class="contact-form-wrapper">
+    <h2>Get in Touch</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <input type="text" formControlName="name" placeholder="Your Name" />
+      <input type="email" formControlName="email" placeholder="Your Email" />
+      <textarea formControlName="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>

@@ -12,6 +12,7 @@
 }
 
 .text-box h2 {
+  font-family: 'Fira Code';
   font-size: 1.5rem;
   font-weight: 300;
   margin-bottom: 0.5rem;
@@ -20,29 +21,17 @@
 }
 
 .text-box h1 {
-  font-size: 4rem;
+
+  font-weight: 700;
+  font-style: normal;
+  font-size: 120px;
+  line-height: 120%;
+  letter-spacing: 0;
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
 }
 
-.abovethefold-content {
-  width: 100%;
-  max-width: 1440px; // oder 1280px je nach Geschmack
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Optional: auf großen Screens noch größer */
-@media (min-width: 1024px) {
-  .text-box h1 {
-    font-size: 6rem;
-  }
-
-  .text-box h2 {
-    font-size: 2rem;
-  }
-}
 
 .button-group {
   margin-top: 2rem;
@@ -73,8 +62,8 @@
   }
 
   &:hover {
-    border-color: #26ff9c;
-    color: #26ff9c;
+    border-color: #3DCFB6;
+    color: #3DCFB6;
 
     span {
       animation: slideLoop 3s ease-in-out infinite;

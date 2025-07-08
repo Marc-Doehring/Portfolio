@@ -1,9 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+//* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Karla:wght@400;700&display=swap');
+
+
 body {
+  font-family: 'Karla';
   background-color: blueviolet;
   margin: 0;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1440px; // oder 1280px, je nach Stil
+  margin: 0 auto;
+  padding: 0 2rem;
 }
