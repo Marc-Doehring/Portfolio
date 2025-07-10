@@ -1,34 +1,36 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contactform.component.html',
-  styleUrl: './contactform.component.scss'
+  styleUrls: ['./contactform.component.scss'],
 })
 export class ContactFormComponent {
   contactForm: FormGroup;
+  submitted = false;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
+      privacy: [false, Validators.requiredTrue],
     });
   }
 
-  onSubmit(): void {
+  onSubmit() {
+    this.submitted = true;
+
     if (this.contactForm.valid) {
-      console.log('Formulardaten:', this.contactForm.value);
-      // Hier kannst du später EmailJS, Formspree oder eigenes Backend einbinden
+      console.log('Form sent:', this.contactForm.value);
+      alert('Thanks for your message!');
       this.contactForm.reset();
-    } else {
-      console.warn('Formular ungültig.');
-      this.contactForm.markAllAsTouched();
+      this.submitted = false;
     }
   }
 }
-

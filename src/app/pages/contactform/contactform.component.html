@@ -1,11 +1,39 @@
 <section id="contact" class="content-wrapper contact-section">
-  <div class="contact-form-wrapper">
-    <h2>Get in Touch</h2>
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-      <input type="text" formControlName="name" placeholder="Your Name" />
-      <input type="email" formControlName="email" placeholder="Your Email" />
-      <textarea formControlName="message" rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <div class="contact-content">
+    
+    <!-- Linke Seite -->
+    <div class="contact-text">
+      <h2>Get in Touch</h2>
+      <p>If you want to collaborate or have any questions, feel free to reach out!</p>
+    </div>
+
+    <!-- Rechte Seite -->
+    <div class="contact-form-wrapper">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+
+        <hr class="divider" /> 
+        <label for="name" class="section-title">What’s your name?</label>
+        <input id="name" type="text" formControlName="name" placeholder="Your name goes here" />
+        <hr class="divider" />
+
+        <label for="email" class="section-title">What’s your email?</label>
+        <input id="email" type="email" formControlName="email" placeholder="youremail@email.com" />
+        <hr class="divider" />
+
+        <label for="message" class="section-title">How can I help you?</label>
+        <textarea id="message" formControlName="message" rows="5" placeholder="Hello Marc, I am interested in..."></textarea>
+        <hr class="divider" />
+
+        <div class="privacy-checkbox">
+          <input type="checkbox" id="privacy" formControlName="privacy" />
+          <label for="privacy">
+            I’ve read the <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a> and agree to the processing of my data as outlined.
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="!contactForm.valid">Say Hello ;)</button>
+      </form>
+    </div>
+
   </div>
 </section>

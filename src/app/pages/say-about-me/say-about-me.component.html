@@ -1,0 +1,23 @@
+<section class="say-about-me-section">
+    <div class="content-wrapper">
+        <h3 class="section-label">What Others Say</h3>
+
+        <div class="carousel">
+            <div class="testimonial" *ngFor="let item of testimonials; let i = index"
+                [class.active]="i === activeIndex">
+                <p class="quote">{{ item.quote }}</p>
+                <p class="author">{{ item.author }}</p>
+            </div>
+
+            <div class="controls">
+                <button class="arrow left" (click)="prev()">&#10094;</button>
+                <div class="dots">
+                    <span *ngFor="let item of testimonials; let idx = index" [class.active]="idx === activeIndex"
+                        (click)="goTo(idx)">
+                    </span>
+                </div>
+                <button class="arrow right" (click)="next()">&#10095;</button>
+            </div>
+        </div>
+    </div>
+</section>

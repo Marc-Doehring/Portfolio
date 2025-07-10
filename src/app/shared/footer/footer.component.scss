@@ -1,0 +1,93 @@
+// Variablen
+$color-bg-footer: #303030;
+$color-green: #3DCFB6;
+$color-white: #fff;
+$color-gray-light: #ccc;
+
+// Footer Styles
+.footer-section {
+  background: linear-gradient(to right, #1C1C1C, #08463B);
+  color: $color-white;
+  padding: 2rem 0;
+  font-family: 'Karla', sans-serif;
+
+  .footer-wrapper {
+    max-width: 1440px; // Gleiche max-width wie content-wrapper global
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    // Linke Spalte
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      .logo-name {
+        font-family: 'Fira Code', monospace;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: $color-green;
+      }
+
+      .footer-role,
+      .footer-location {
+        font-weight: 300;
+        font-size: 1rem;
+        color: $color-gray-light;
+      }
+    }
+
+    // Mittlere Spalte
+    .footer-center {
+      font-weight: 300;
+      font-size: 1rem;
+      color: $color-green;
+      text-align: center;
+      flex: 1; // damit es mittig bleibt und flexibler ist
+    }
+
+    // Rechte Spalte
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-end;
+
+      .footer-link {
+        color: $color-green;
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  // Responsive für kleinere Bildschirme
+  @media (max-width: 700px) {
+    .footer-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-right {
+        align-items: center;
+      }
+    }
+  }
+}

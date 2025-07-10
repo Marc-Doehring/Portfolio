@@ -1,0 +1,89 @@
+.myskills-section {
+  background-color: #1C1C1C;
+  padding: 4rem 0;
+  color: white;
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .myskills-wrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: stretch;  // wichtig: gleiche Höhe der Kinder
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: stretch; // auch hier, falls nötig
+    }
+  }
+
+  .skills-left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .section-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.25rem;
+      color: #3DCFB6;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .skills-left {
+     flex: 1; // Rahmen nimmt volle Höhe der Spalte ein
+  border: 2px solid #3DCFB6;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: rgba(8, 70, 59, 0.3);
+
+    .section-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 2rem;
+      color: #3DCFB6;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-family: 'Karla', sans-serif;
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .skills-right {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      max-width: 80px;
+      height: auto;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease, transform 0.3s ease;
+      cursor: default;
+
+      &:hover {
+        filter: brightness(1);
+        transform: scale(1.1);
+      }
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+
+      img {
+        max-width: 60px;
+      }
+    }
+  }
+}

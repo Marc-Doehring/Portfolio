@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Karla';
-  background-color: blueviolet;
+  background: linear-gradient(to right, #1C1C1C, #08463B);
   margin: 0;
 }
 
@@ -20,4 +20,54 @@ html {
   max-width: 1440px; // oder 1280px, je nach Stil
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.ghost-button {
+  font-family: 'Karla', sans-serif;
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 2px solid white;
+  border-radius: 9999px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    transform: translateX(0%);
+  }
+
+  &:hover {
+    border-color: #3DCFB6;
+    color: #3DCFB6;
+
+    span {
+      animation: slideLoop 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes slideLoop {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  55% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
