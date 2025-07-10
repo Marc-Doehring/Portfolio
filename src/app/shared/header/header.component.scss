@@ -7,82 +7,113 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-}
 
-a {
-  font-family: 'Fira Code'
-}
+  a {
+    font-family: 'Fira Code';
+  }
 
-.header-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.lang-switch button {
-  background: transparent;
-  border: 1px solid white;
-  color: white;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 9999px;
-}
-
-.lang-switch button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  text-decoration: none
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .nav-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .lang-switch {
+    button {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 9999px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding: 0.3rem 0;
+      transition: color 0.3s ease;
+
+      /* Grüner Punkt unter Link beim Hover */
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+      }
+
+      &:hover::after {
+        background-color: #3DCFB6;
+      }
+
+      /* Linktext nur grün wenn aktiv */
+      &.active {
+        color: #3DCFB6;
+      }
+    }
   }
 
   .logo {
-    align-self: flex-end;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+
+      a {
+        &::after {
+          bottom: -4px;
+        }
+      }
+    }
+
+    .logo {
+      align-self: flex-end;
+    }
   }
 }

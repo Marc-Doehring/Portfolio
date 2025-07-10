@@ -2,15 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  currentLanguage: string = 'EN';
+  currentSection: string = '';
 
-  toggleLanguage() {
-    this.currentLanguage = this.currentLanguage === 'EN' ? 'DE' : 'EN';
+  setCurrentSection(section: string) {
+    this.currentSection = section;
   }
 }

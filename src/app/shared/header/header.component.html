@@ -6,9 +6,15 @@
         <button>DE</button>
       </div>
       <nav class="nav-links">
-        <a href="#aboutme">About me</a>
-        <a href="#myskills">Skills</a>
-        <a href="#portfolio">Projects</a>
+        <a href="#aboutme"
+           [class.active]="currentSection === 'aboutme'"
+           (click)="setCurrentSection('aboutme')">About me</a>
+        <a href="#myskills"
+           [class.active]="currentSection === 'myskills'"
+           (click)="setCurrentSection('myskills')">Skills</a>
+        <a href="#portfolio"
+           [class.active]="currentSection === 'portfolio'"
+           (click)="setCurrentSection('portfolio')">Projects</a>
       </nav>
     </div>
 
