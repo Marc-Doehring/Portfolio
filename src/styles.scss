@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Karla';
-  background: linear-gradient(to right, #1C1C1C, #08463B);
+  background-color: rgba(28, 28, 28, 1);
   margin: 0;
 }
 
@@ -19,7 +19,6 @@ html {
   width: 100%;
   max-width: 1440px; // oder 1280px, je nach Stil
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
 .ghost-button {
@@ -70,4 +69,32 @@ html {
     transform: translateX(0%);
     opacity: 1;
   }
+}
+
+.logo {
+    
+
+    img {
+      padding-top: 10px;
+      width: 72px; /* Adjust as needed */
+      height: auto;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        content: url('/header/Logo_outline.png');
+      }
+    }
+  }
+
+  .cursor-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, rgba(61, 207, 182, 0.15), transparent 40%);
+  filter: blur(80px);
+  transition: background-position 0.05s ease;
 }

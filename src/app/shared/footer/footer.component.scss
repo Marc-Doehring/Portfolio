@@ -1,4 +1,4 @@
-// Variablen
+// Farben
 $color-bg-footer: #303030;
 $color-green: #3DCFB6;
 $color-white: #fff;
@@ -6,33 +6,26 @@ $color-gray-light: #ccc;
 
 // Footer Styles
 .footer-section {
-  background: linear-gradient(to right, #1C1C1C, #08463B);
+  background-color: rgba(28, 28, 28, 1);
   color: $color-white;
   padding: 2rem 0;
   font-family: 'Karla', sans-serif;
 
   .footer-wrapper {
-    max-width: 1440px; // Gleiche max-width wie content-wrapper global
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 2rem;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
-    // Linke Spalte
     .footer-left {
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
 
-      .logo-name {
-        font-family: 'Fira Code', monospace;
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: $color-green;
-      }
+
 
       .footer-role,
       .footer-location {
@@ -42,36 +35,55 @@ $color-gray-light: #ccc;
       }
     }
 
-    // Mittlere Spalte
     .footer-center {
       font-weight: 300;
       font-size: 1rem;
       color: $color-green;
       text-align: center;
-      flex: 1; // damit es mittig bleibt und flexibler ist
+      flex: 1;
     }
 
-    // Rechte Spalte
     .footer-right {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      align-items: flex-end;
+      align-items: flex-start; // Wichtig: Links ausrichten jetzt
 
-      .footer-link {
-        color: $color-green;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $color-white;
         text-decoration: none;
         font-weight: 400;
         transition: color 0.3s ease;
+        position: relative;
+        padding-left: 1.2rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 6px;
+          height: 6px;
+          background-color: transparent;
+          border-radius: 50%;
+          transition: background-color 0.3s ease;
+        }
 
         &:hover {
-          color: $color-white;
+          color: $color-green;
+
+          &::before {
+            background-color: $color-green;
+          }
         }
       }
     }
   }
 
-  // Responsive für kleinere Bildschirme
   @media (max-width: 700px) {
     .footer-wrapper {
       flex-direction: column;
@@ -87,7 +99,20 @@ $color-gray-light: #ccc;
 
       .footer-right {
         align-items: center;
+
+        a {
+          justify-content: center;
+          padding-left: 0;
+
+          &::before {
+            position: static;
+            margin-right: 0.5rem;
+            transform: none;
+          }
+        }
       }
     }
   }
 }
+
+
