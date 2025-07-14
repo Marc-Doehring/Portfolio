@@ -1,7 +1,7 @@
 .myskills-section {
-  padding: 10rem 0;
+  padding: 6rem 0;
   color: white;
-  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,12 +16,11 @@
   .myskills-wrapper {
     display: flex;
     gap: 4rem;
-    align-items: stretch;  // wichtig: gleiche Höhe der Kinder
+    align-items: stretch;
 
     @media (max-width: 900px) {
       flex-direction: column;
       gap: 2rem;
-      align-items: stretch; // auch hier, falls nötig
     }
   }
 
@@ -39,11 +38,11 @@
   }
 
   .skills-left {
-     flex: 1; // Rahmen nimmt volle Höhe der Spalte ein
-  border: 2px solid #3DCFB6;
-  padding: 2rem;
-  border-radius: 12px;
-  background-color: rgba(8, 70, 59, 0.3);
+    flex: 1;
+    border: 2px solid #3DCFB6;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: rgba(8, 70, 59, 0.3);
 
     .section-title {
       font-family: 'Fira Code', monospace;
@@ -57,6 +56,21 @@
       font-size: 1.1rem;
       color: #ccc;
       margin-bottom: 2rem;
+    }
+
+    .ghost-button {
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 1px solid #3DCFB6;
+      color: #3DCFB6;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #3DCFB6;
+        color: #1C1C1C;
+      }
     }
   }
 
@@ -86,6 +100,31 @@
 
       img {
         max-width: 60px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+
+      img {
+        max-width: 50px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 4rem 1rem;
+
+    .skills-left {
+      padding: 1.5rem;
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
       }
     }
   }

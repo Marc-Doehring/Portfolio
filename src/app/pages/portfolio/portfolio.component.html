@@ -1,1 +1,49 @@
-<p>portfolio works!</p>
+<section id="portfolio" class="portfolio-section content-wrapper">
+  <!-- Header -->
+  <div class="portfolio-header">
+    <h5>Portfolio</h5>
+    <h2 class="green">Featured Projects</h2>
+    <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+    <hr class="divider" />
+  </div>
+
+  <div class="portfolio-content">
+    <!-- Linke Seite: Projektliste, ca 70% -->
+    <div class="project-list">
+      <ng-container *ngFor="let project of projects; let i = index">
+        <div 
+          class="project-entry" 
+          (mouseenter)="hoveredProjectIndex = i" 
+          (mouseleave)="hoveredProjectIndex = null"
+          (click)="openModal(project)"
+        >
+          <h3>
+            {{ project.title }}
+            <span class="arrow">&nearr;</span>
+          </h3>
+          <p class="stack">{{ project.stack }}</p>
+        </div>
+        <hr *ngIf="i < projects.length - 1" class="divider" />
+      </ng-container>
+    </div>
+
+    <!-- Rechte Seite: Bild des gehhoverten Projekts, ca 30% -->
+    <div class="hover-image" *ngIf="hoveredProjectIndex !== null">
+      <img [src]="projects[hoveredProjectIndex].image" [alt]="projects[hoveredProjectIndex].title" />
+    </div>
+  </div>
+
+  <!-- Abschlusslinie unten -->
+  <hr class="divider" />
+
+  <!-- Modal (optional) -->
+  <div class="modal-backdrop" *ngIf="selectedProject" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h2>{{ selectedProject.title }}</h2>
+      <p>{{ selectedProject.description }}</p>
+      <img [src]="selectedProject.image" alt="{{ selectedProject.title }} image" />
+      <p class="stack">{{ selectedProject.stack }}</p>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</section>

@@ -6,9 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  currentSection: string = '';
+   currentSection = '';
+  mobileMenuOpen = false;
 
   setCurrentSection(section: string) {
     this.currentSection = section;
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  navigateMobile(section: string) {
+    this.setCurrentSection(section);
+    this.mobileMenuOpen = false;
   }
 }

@@ -5,20 +5,30 @@
         <button>EN</button>
         <button>DE</button>
       </div>
-      <nav class="nav-links">
-        <a href="#aboutme"
-           [class.active]="currentSection === 'aboutme'"
-           (click)="setCurrentSection('aboutme')">About me</a>
-        <a href="#myskills"
-           [class.active]="currentSection === 'myskills'"
-           (click)="setCurrentSection('myskills')">Skills</a>
-        <a href="#portfolio"
-           [class.active]="currentSection === 'portfolio'"
-           (click)="setCurrentSection('portfolio')">Projects</a>
+
+      <nav class="nav-links desktop-nav">
+        <a href="#aboutme" [class.active]="currentSection === 'aboutme'" (click)="setCurrentSection('aboutme')">About me</a>
+        <a href="#myskills" [class.active]="currentSection === 'myskills'" (click)="setCurrentSection('myskills')">Skills</a>
+        <a href="#portfolio" [class.active]="currentSection === 'portfolio'" (click)="setCurrentSection('portfolio')">Projects</a>
       </nav>
     </div>
 
-    <div class="logo"><img src="/header/Unbenannt.png" alt="Logo" /></div>
+    <div class="logo">
+      <img src="/header/Unbenannt.png" alt="Logo" />
+    </div>
+
+    <!-- Burger Button -->
+    <div class="burger" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Menü -->
+  <div class="mobile-nav" [class.open]="mobileMenuOpen">
+    <a href="#aboutme" (click)="navigateMobile('aboutme')">About me</a>
+    <a href="#myskills" (click)="navigateMobile('myskills')">Skills</a>
+    <a href="#portfolio" (click)="navigateMobile('portfolio')">Projects</a>
   </div>
 </header>
-

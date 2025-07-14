@@ -57,7 +57,6 @@
       padding: 0.3rem 0;
       transition: color 0.3s ease;
 
-      /* Grüner Punkt unter Link beim Hover */
       &::after {
         content: '';
         position: absolute;
@@ -75,41 +74,76 @@
         background-color: #3DCFB6;
       }
 
-      /* Linktext nur grün wenn aktiv */
       &.active {
         color: #3DCFB6;
       }
     }
   }
 
+  // ======== BURGER BUTTON ========
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
 
-  /* Responsive */
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      display: block;
+      transition: all 0.3s ease;
+    }
+  }
+
+  // ======== MOBILE NAVIGATION ========
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #1C1C1C;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid #444;
+      font-weight: 500;
+    }
+
+    &.open {
+      display: flex;
+    }
+  }
+
+  // ======== RESPONSIVE ========
   @media (max-width: 768px) {
     .header-container {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .nav-left {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+      display: none;
     }
 
-    .nav-links {
-      flex-direction: column;
-      gap: 0.5rem;
+    .burger {
+      display: flex;
+    }
 
-      a {
-        &::after {
-          bottom: -4px;
-        }
+    .mobile-nav {
+      display: none;
+
+      &.open {
+        display: flex;
       }
-    }
-
-    .logo {
-      align-self: flex-end;
     }
   }
 }
