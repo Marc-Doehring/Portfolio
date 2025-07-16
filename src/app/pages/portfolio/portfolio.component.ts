@@ -1,42 +1,67 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-portfolio',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements AfterViewInit {
   projects = [
     {
       title: 'Join',
       stack: 'Angular | TypeScript | HTML | CSS | Firebase',
-      image: 'assets/img/join.png',
+      image: '/portfolio/join.png',
       description: 'A collaborative task manager similar to Trello.'
     },
     {
       title: 'El Pollo Loco',
       stack: 'HTML | CSS | JavaScript',
-      image: 'assets/img/pollo.png',
+      image: '/portfolio/loco.png',
       description: 'A jump-and-run browser game featuring chickens and enemies.'
     },
     {
       title: 'DA Bubble',
       stack: 'Angular | Firebase | TypeScript',
-      image: 'assets/img/bubble.png',
+      image: '/portfolio/bubble.png',
       description: 'A real-time chat app built with Angular and Firebase.'
     }
   ];
 
   hoveredProjectIndex: number | null = null;
-  selectedProject: any = null;
+  selectedProjectIndex: number | null = null;
 
-  openModal(project: any) {
-    this.selectedProject = project;
+  @ViewChildren('projectEntry', { read: ElementRef }) projectEntries!: QueryList<ElementRef>;
+
+  openModal(index: number): void {
+    this.selectedProjectIndex = index;
   }
 
-  closeModal() {
-    this.selectedProject = null;
+  closeModal(): void {
+    this.selectedProjectIndex = null;
+  }
+
+  prevProject(event: MouseEvent): void {
+    event.stopPropagation();
+    if (this.selectedProjectIndex !== null && this.selectedProjectIndex > 0) {
+      this.selectedProjectIndex--;
+    }
+  }
+
+  nextProject(event: MouseEvent): void {
+    event.stopPropagation();
+    if (this.selectedProjectIndex !== null && this.selectedProjectIndex < this.projects.length - 1) {
+      this.selectedProjectIndex++;
+    }
+  }
+
+  trackByIndex(index: number, item: any): number {
+    return index;
+  }
+
+  ngAfterViewInit(): void {
+    // Falls in Zukunft benötigt für Scroll oder Animationen
   }
 }

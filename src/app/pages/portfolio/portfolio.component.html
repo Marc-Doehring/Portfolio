@@ -1,21 +1,21 @@
 <section id="portfolio" class="portfolio-section content-wrapper">
-  <!-- Header -->
   <div class="portfolio-header">
     <h5>Portfolio</h5>
     <h2 class="green">Featured Projects</h2>
     <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
-    <hr class="divider" />
   </div>
 
   <div class="portfolio-content">
-    <!-- Linke Seite: Projektliste, ca 70% -->
+    <!-- Projektliste links -->
     <div class="project-list">
-      <ng-container *ngFor="let project of projects; let i = index">
-        <div 
-          class="project-entry" 
-          (mouseenter)="hoveredProjectIndex = i" 
+      <hr class="green-divider" />
+      <ng-container *ngFor="let project of projects; let i = index; trackBy: trackByIndex">
+        <div
+          #projectEntry
+          class="project-entry"
+          (mouseenter)="hoveredProjectIndex = i"
           (mouseleave)="hoveredProjectIndex = null"
-          (click)="openModal(project)"
+          (click)="openModal(i)"
         >
           <h3>
             {{ project.title }}
@@ -23,27 +23,39 @@
           </h3>
           <p class="stack">{{ project.stack }}</p>
         </div>
-        <hr *ngIf="i < projects.length - 1" class="divider" />
+        <hr *ngIf="i < projects.length - 1" class="green-divider" />
       </ng-container>
+      <hr class="green-divider" />
     </div>
 
-    <!-- Rechte Seite: Bild des gehhoverten Projekts, ca 30% -->
+    <!-- Hover-Bild rechts außerhalb des Projektbereichs -->
     <div class="hover-image" *ngIf="hoveredProjectIndex !== null">
-      <img [src]="projects[hoveredProjectIndex].image" [alt]="projects[hoveredProjectIndex].title" />
+      <img
+        [src]="projects[hoveredProjectIndex].image"
+        [alt]="projects[hoveredProjectIndex].title"
+        loading="lazy"
+      />
     </div>
   </div>
 
-  <!-- Abschlusslinie unten -->
-  <hr class="divider" />
-
-  <!-- Modal (optional) -->
-  <div class="modal-backdrop" *ngIf="selectedProject" (click)="closeModal()">
+  <!-- Modal Overlay -->
+  <div class="modal-backdrop" *ngIf="selectedProjectIndex !== null" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
-      <h2>{{ selectedProject.title }}</h2>
-      <p>{{ selectedProject.description }}</p>
-      <img [src]="selectedProject.image" alt="{{ selectedProject.title }} image" />
-      <p class="stack">{{ selectedProject.stack }}</p>
-      <button (click)="closeModal()">Close</button>
+      <h2>{{ projects[selectedProjectIndex].title }}</h2>
+      <p>{{ projects[selectedProjectIndex].description }}</p>
+      <img
+        [src]="projects[selectedProjectIndex].image"
+        [alt]="projects[selectedProjectIndex].title"
+        loading="lazy"
+      />
+      <p class="stack">{{ projects[selectedProjectIndex].stack }}</p>
+
+      <div class="modal-controls">
+        <button (click)="prevProject($event)" [disabled]="selectedProjectIndex === 0">&larr;</button>
+        <button (click)="nextProject($event)" [disabled]="selectedProjectIndex === projects.length - 1">&rarr;</button>
+      </div>
+
+      <button class="close-btn" (click)="closeModal()">Close</button>
     </div>
   </div>
 </section>
