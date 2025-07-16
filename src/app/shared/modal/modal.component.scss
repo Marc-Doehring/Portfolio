@@ -1,3 +1,8 @@
+$green: #3DCFB6;
+$dark-bg: #01110e;
+$light-text: #ffffff;
+$muted-text: #c2c2c2;
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -15,14 +20,14 @@
   position: relative;
   max-width: 1200px;
   width: 100%;
-  background: linear-gradient(to bottom right, #0f2721, #01110e);
+  background: linear-gradient(to bottom right, #0f2721, $dark-bg);
   border-radius: 20px;
   padding: 3rem;
-  color: #ffffff;
+  color: $light-text;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
-  border: 1px solid rgba(0, 255, 170, 0.2);
+  box-shadow: 0 0 20px rgba($green, 0.1);
+  border: 1px solid rgba($green, 0.2);
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 1024px) {
@@ -35,55 +40,24 @@
   flex: 1;
   padding-right: 2rem;
 
-  h1 {
-    font-size: 6rem;
-    font-weight: bold;
-    color: #10f4a4;
-    margin: 0;
-  }
-
   h2 {
     font-size: 3rem;
-    margin-top: -1rem;
     font-weight: 700;
+    color: $green;
+    margin: 0 0 1rem 0;
   }
 
   p {
     font-size: 1.2rem;
-    margin: 1rem 0 2rem;
+    margin: 1rem 0;
     line-height: 1.6;
-    color: #c2c2c2;
+    color: $muted-text;
   }
 
-  .tech-icons {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-
-    img {
-      height: 2.5rem;
-      width: auto;
-    }
-  }
-
-  .action-buttons {
-    display: flex;
-    gap: 1rem;
-
-    a {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border: 2px solid #ffffff;
-      border-radius: 50px;
-      color: #ffffff;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-
-      &:hover {
-        background: #10f4a4;
-        color: #0a1a16;
-      }
-    }
+  .stack {
+    font-style: italic;
+    color: $green;
+    margin-top: 1rem;
   }
 }
 
@@ -97,7 +71,7 @@
     width: 100%;
     max-width: 600px;
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 255, 170, 0.2);
+    box-shadow: 0 0 30px rgba($green, 0.2);
   }
 }
 
@@ -108,10 +82,36 @@
   background: transparent;
   border: none;
   font-size: 2rem;
-  color: #ffffff;
+  color: $light-text;
   cursor: pointer;
 
   &:hover {
-    color: #10f4a4;
+    color: $green;
+  }
+}
+
+.modal-next {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 30rem;
+  cursor: pointer;
+  color: $green;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  .arrow {
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: lighten($green, 10%);
+
+    .arrow {
+      transform: translateX(8px);
+    }
   }
 }

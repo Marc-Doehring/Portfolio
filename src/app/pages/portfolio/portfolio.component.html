@@ -30,16 +30,13 @@
   </div>
 
   <!-- Modal Overlay -->
-  <app-modal
+<app-modal
   *ngIf="selectedProjectIndex !== null"
   [project]="projects[selectedProjectIndex]"
-  [hasPrev]="selectedProjectIndex > 0"
-  [hasNext]="selectedProjectIndex < projects.length - 1"
+  [projects]="projects"
+  [currentIndex]="selectedProjectIndex"
+  (changeProject)="selectedProjectIndex = $event"
   (close)="closeModal()"
-  (next)="nextProject()"
-  (prev)="prevProject()"
-></app-modal>
-
-
+/>
 
 </section>
