@@ -12,13 +12,12 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
 
   ngOnInit(): void {
-    document.addEventListener('mousemove', (e) => {
-      const shadow = document.querySelector('.cursor-shadow') as HTMLElement;
-      if (!shadow) return;
+  document.addEventListener('mousemove', (e) => {
+    const shadow = document.querySelector('.cursor-shadow') as HTMLElement;
+    if (!shadow) return;
 
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      shadow.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(61, 207, 182, 0.15), transparent 40%)`;
-    });
-  }
+    shadow.style.left = `${e.clientX}px`;
+    shadow.style.top = `${e.clientY}px`;
+  });
+}
 }
