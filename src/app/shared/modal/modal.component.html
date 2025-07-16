@@ -1,7 +1,10 @@
 <div class="modal-backdrop" (click)="emitClose()">
   <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <!-- Close Button oben rechts -->
     <button class="close-btn" (click)="emitClose()">×</button>
 
+    <!-- Linke Seite: Text -->
     <div class="modal-left">
       <h1>{{ project?.title }}</h1>
       <h2 *ngIf="project?.subtitle">{{ project?.subtitle }}</h2>
@@ -13,18 +16,26 @@
       </div>
 
       <div class="action-buttons">
-        <a *ngIf="project?.liveLink" [href]="project.liveLink" target="_blank">Live</a>
-        <a *ngIf="project?.githubLink" [href]="project.githubLink" target="_blank">GitHub</a>
+        <a *ngIf="project?.liveLink" [href]="project.liveLink" target="_blank" class="custom-button">
+          Live Test
+          <span class="arrow">➜</span>
+        </a>
+        <a *ngIf="project?.githubLink" [href]="project.githubLink" target="_blank" class="custom-button">
+          GitHub
+          <span class="arrow">➜</span>
+        </a>
       </div>
     </div>
 
+    <!-- Rechte Seite: Bild + Next Button -->
     <div class="modal-right">
       <img [src]="project?.image" [alt]="project?.title" loading="lazy" />
+
+      <div class="modal-next" (click)="emitNext()">
+        <span>Next project</span>
+        <span class="arrow">→</span>
+      </div>
     </div>
 
-    <div class="modal-next" (click)="emitNext()">
-      <span>Next project</span>
-      <span class="arrow">→</span>
-    </div>
   </div>
 </div>

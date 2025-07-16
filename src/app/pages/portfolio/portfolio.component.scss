@@ -2,6 +2,8 @@
   position: relative;
   background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
   color: white;
+  padding-top: 140px;
+  padding-bottom: 120px;
 
   .green {
     color: #3DCFB6;
@@ -13,7 +15,7 @@
     height: 1px;
     background-color: #3DCFB6;
     border: none;
-    margin: 1rem 0;
+    margin: 0;
   }
 
   .portfolio-header {
@@ -74,7 +76,7 @@
 
     .hover-image {
   position: sticky;
-  top: 100px;
+  top: 50px;
   margin-left: 4rem;
   width: 320px;
   z-index: 5;
@@ -85,7 +87,7 @@
   &::before {
     content: '';
     position: absolute;
-    bottom: 180px; // weiter nach unten
+    bottom: 60px; // weiter nach unten
     right: -30px;  // weiter nach rechts
     width: 220px;  // frei skalierbar!
     height: 220px;
@@ -109,87 +111,6 @@
     display: none;
   }
 }
-
-
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-
-    .modal-content {
-      background-color: #1e1e1e;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-
-      h2 {
-        color: #3DCFB6;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        color: #ddd;
-      }
-
-      img {
-        width: 100%;
-        margin: 1rem 0;
-        border-radius: 6px;
-        border: 1px solid #3DCFB6;
-      }
-
-      .stack {
-        color: #999;
-        margin-top: 1rem;
-      }
-
-      .modal-controls {
-        display: flex;
-        justify-content: space-between;
-        margin: 1rem 0;
-
-        button {
-          background-color: #3DCFB6;
-          border: none;
-          padding: 0.5rem 1rem;
-          border-radius: 4px;
-          font-weight: bold;
-          color: #1c1c1c;
-          cursor: pointer;
-
-          &:disabled {
-            background-color: #888;
-            cursor: not-allowed;
-          }
-
-          &:hover:enabled {
-            background-color: #33bda4;
-          }
-        }
-      }
-
-      .close-btn {
-        margin-top: 1rem;
-        background-color: #3DCFB6;
-        color: #1c1c1c;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        font-weight: bold;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #33bda4;
-        }
-      }
-    }
-  }
 
   .content-wrapper {
     max-width: 1440px;

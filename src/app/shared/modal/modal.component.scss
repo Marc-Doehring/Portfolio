@@ -20,14 +20,13 @@ $muted-text: #c2c2c2;
   position: relative;
   max-width: 1200px;
   width: 100%;
-  background: linear-gradient(to bottom right, #0f2721, $dark-bg);
-  border-radius: 20px;
+  background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+  border-radius: 30px;
+  border: 1px solid rgba(61, 207, 182, 1);
   padding: 3rem;
   color: $light-text;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 0 20px rgba($green, 0.1);
-  border: 1px solid rgba($green, 0.2);
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 1024px) {
@@ -114,4 +113,47 @@ $muted-text: #c2c2c2;
       transform: translateX(8px);
     }
   }
+  
 }
+
+.action-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .custom-button {
+    font-family: 'Karla', sans-serif;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid $light-text;
+    border-radius: 9999px;
+    background: transparent;
+    color: $light-text;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    .arrow {
+      color: $green;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      border-color: $green;
+      color: $green;
+
+      .arrow {
+        color: $green;
+        transform: translate(4px, -2px) rotate(10deg);
+      }
+    }
+  }
+}
+
+
