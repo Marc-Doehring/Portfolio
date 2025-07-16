@@ -1,0 +1,117 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #0a1a16 0%, #020c0a 100%);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  background: linear-gradient(to bottom right, #0f2721, #01110e);
+  border-radius: 20px;
+  padding: 3rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
+  border: 1px solid rgba(0, 255, 170, 0.2);
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 2rem;
+  }
+}
+
+.modal-left {
+  flex: 1;
+  padding-right: 2rem;
+
+  h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #10f4a4;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin-top: -1rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+    line-height: 1.6;
+    color: #c2c2c2;
+  }
+
+  .tech-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    img {
+      height: 2.5rem;
+      width: auto;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #ffffff;
+      border-radius: 50px;
+      color: #ffffff;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background: #10f4a4;
+        color: #0a1a16;
+      }
+    }
+  }
+}
+
+.modal-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.2);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    color: #10f4a4;
+  }
+}

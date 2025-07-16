@@ -10,13 +10,8 @@
     <div class="project-list">
       <hr class="green-divider" />
       <ng-container *ngFor="let project of projects; let i = index; trackBy: trackByIndex">
-        <div
-          #projectEntry
-          class="project-entry"
-          (mouseenter)="hoveredProjectIndex = i"
-          (mouseleave)="hoveredProjectIndex = null"
-          (click)="openModal(i)"
-        >
+        <div #projectEntry class="project-entry" (mouseenter)="hoveredProjectIndex = i"
+          (mouseleave)="hoveredProjectIndex = null" (click)="openModal(i)">
           <h3>
             {{ project.title }}
             <span class="arrow">&nearr;</span>
@@ -30,32 +25,21 @@
 
     <!-- Hover-Bild rechts außerhalb des Projektbereichs -->
     <div class="hover-image" *ngIf="hoveredProjectIndex !== null">
-      <img
-        [src]="projects[hoveredProjectIndex].image"
-        [alt]="projects[hoveredProjectIndex].title"
-        loading="lazy"
-      />
+      <img [src]="projects[hoveredProjectIndex].image" [alt]="projects[hoveredProjectIndex].title" loading="lazy" />
     </div>
   </div>
 
   <!-- Modal Overlay -->
-  <div class="modal-backdrop" *ngIf="selectedProjectIndex !== null" (click)="closeModal()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <h2>{{ projects[selectedProjectIndex].title }}</h2>
-      <p>{{ projects[selectedProjectIndex].description }}</p>
-      <img
-        [src]="projects[selectedProjectIndex].image"
-        [alt]="projects[selectedProjectIndex].title"
-        loading="lazy"
-      />
-      <p class="stack">{{ projects[selectedProjectIndex].stack }}</p>
+  <app-modal
+  *ngIf="selectedProjectIndex !== null"
+  [project]="projects[selectedProjectIndex]"
+  [hasPrev]="selectedProjectIndex > 0"
+  [hasNext]="selectedProjectIndex < projects.length - 1"
+  (close)="closeModal()"
+  (next)="nextProject()"
+  (prev)="prevProject()"
+></app-modal>
 
-      <div class="modal-controls">
-        <button (click)="prevProject($event)" [disabled]="selectedProjectIndex === 0">&larr;</button>
-        <button (click)="nextProject($event)" [disabled]="selectedProjectIndex === projects.length - 1">&rarr;</button>
-      </div>
 
-      <button class="close-btn" (click)="closeModal()">Close</button>
-    </div>
-  </div>
+
 </section>

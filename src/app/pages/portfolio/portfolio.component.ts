@@ -1,10 +1,11 @@
 import { Component, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ModalComponent],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
@@ -43,19 +44,18 @@ export class PortfolioComponent implements AfterViewInit {
     this.selectedProjectIndex = null;
   }
 
-  prevProject(event: MouseEvent): void {
-    event.stopPropagation();
-    if (this.selectedProjectIndex !== null && this.selectedProjectIndex > 0) {
-      this.selectedProjectIndex--;
-    }
+  nextProject() {
+  if (this.selectedProjectIndex !== null && this.selectedProjectIndex < this.projects.length - 1) {
+    this.selectedProjectIndex++;
   }
+}
 
-  nextProject(event: MouseEvent): void {
-    event.stopPropagation();
-    if (this.selectedProjectIndex !== null && this.selectedProjectIndex < this.projects.length - 1) {
-      this.selectedProjectIndex++;
-    }
+prevProject() {
+  if (this.selectedProjectIndex !== null && this.selectedProjectIndex > 0) {
+    this.selectedProjectIndex--;
   }
+}
+
 
   trackByIndex(index: number, item: any): number {
     return index;

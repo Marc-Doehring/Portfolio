@@ -1,0 +1,17 @@
+<!-- modal.component.html -->
+<div class="modal-backdrop" (click)="emitClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h2>{{ project?.title }}</h2>
+    <p>{{ project?.description }}</p>
+    <img [src]="project?.image" [alt]="project?.title" loading="lazy" />
+    <p class="stack">{{ project?.stack }}</p>
+
+    <div class="modal-controls">
+     <button *ngIf="hasPrev" (click)="emitPrev()">←</button>
+      <button *ngIf="hasNext" (click)="emitNext()">→</button>
+    </div>
+
+    <button (click)="emitClose()">X</button>
+  </div>
+</div>
+
