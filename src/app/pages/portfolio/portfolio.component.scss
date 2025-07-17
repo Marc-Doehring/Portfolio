@@ -87,11 +87,11 @@
   &::before {
     content: '';
     position: absolute;
-    bottom: 60px; // weiter nach unten
+    bottom: 20px; // weiter nach unten
     right: -30px;  // weiter nach rechts
-    width: 220px;  // frei skalierbar!
-    height: 220px;
-    background-image: url('/about/Capa_1.png');
+    width: 320px;  // frei skalierbar!
+    height: 290px;
+    background-image: url('/about/bg_portfolio_section.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

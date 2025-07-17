@@ -1,7 +1,7 @@
 .myskills-section {
   padding: 8rem 0;
   color: white;
-  // background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -82,9 +82,9 @@
 
     img {
       width: 100%;
-      max-width: 80px;
+      max-width: 100px;
       height: auto;
-      filter: brightness(0.8);
+      filter: brightness(1);
       transition: filter 0.3s ease, transform 0.3s ease;
       cursor: default;
 
@@ -137,14 +137,15 @@
   .base-image {
     display: block;
     width: 100%;
+    max-width: 300px;
     height: auto;
     border-radius: 8px;
   }
 
   .hover-hint {
     position: absolute;
-    top: -50px; // ❗️Bild 30px höher setzen
-    left: 20%;
+    top: -80px; // ❗️Bild 30px höher setzen
+    left: 25%;
     transform: translateX(-50%) scale(1.2); // ❗️zentriert + vergrößert
     opacity: 0;
     pointer-events: none;
@@ -154,7 +155,7 @@
 
   &:hover .hover-hint {
     opacity: 1;
-    transform: translateX(-50%) scale(1.3); // ❗️größer beim Hover
+    transform: translateX(-50%) scale(1.5); // ❗️größer beim Hover
   }
 }
 
