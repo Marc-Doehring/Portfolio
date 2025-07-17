@@ -1,3 +1,5 @@
+@use 'variables' as vars;
+
 :host {
   display: flex;
   justify-content: center;
@@ -6,9 +8,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  color: white;
-  
- 
+  color: vars.$color-white;
 }
 
 /* Content-Wrapper auf zentrierte Max-Breite */
@@ -31,11 +31,11 @@
   margin-top: -20rem;
 
   h2 {
-    font-family: 'Fira Code';
-    font-size: 1.5rem;
+    font-family: vars.$font-code;
+    font-size: 2rem;
     font-weight: 300;
     margin-bottom: 0.5rem;
-    color: #ccc;
+    color: vars.$color-white;
     letter-spacing: 2px;
   }
 
@@ -67,18 +67,18 @@
   z-index: 2;
 
   .scroll-button {
-    border: 1px solid #00e0c7;
+    border: 1px solid vars.$color-accent;
     border-radius: 100px;
     padding: 8px 12px;
     font-size: 1.5rem;
-    color: #00e0c7;
+    color: vars.$color-accent;
     animation: bounce 2s infinite;
   }
 
   .line {
     width: 1px;
     height: 250px; /* Höhe anpassen */
-    background-color: #00e0c7;
+    background-color: vars.$color-accent;
     margin-top: 2rem;
   }
 }
@@ -98,7 +98,7 @@
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 1rem;
-    color: #ccc;
+    color: #ccc; // Auch hier helles Grau als Kontrast, kann man variabel machen falls gewünscht
   }
 
   .icon-group {
@@ -110,7 +110,7 @@
     .icon-link {
       position: relative;
       display: inline-block;
-      color: #3DCFB6; /* Grüner Icon-Farbton */
+      color: vars.$color-accent; /* Grüner Icon-Farbton */
       transition: color 0.3s ease;
 
       svg {
@@ -120,7 +120,7 @@
 
       /* Hover: Icon wird weiß */
       &:hover {
-        color: white;
+        color: vars.$color-white;
       }
 
       /* Grüner Punkt rechts neben Icon - standard unsichtbar */
@@ -132,7 +132,7 @@
         transform: translateY(-50%);
         width: 6px;
         height: 6px;
-        background-color: #3DCFB6;
+        background-color: vars.$color-accent;
         border-radius: 50%;
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -162,7 +162,7 @@
   .line {
     width: 1px;
     height: 250px; /* gleiche Höhe wie links */
-    background-color: white;
+    background-color: vars.$color-white;
     margin-top: 1rem;
   }
 }
@@ -185,8 +185,8 @@
   p {
     display: inline-block;
     padding: 1rem;
-    color: #00e0c7;
-    font-family: 'Fira Code', monospace;
+    color: vars.$color-accent;
+    font-family: vars.$font-code;
     font-size: 1rem;
     animation: scroll-left 20s linear infinite;
 
@@ -195,7 +195,7 @@
       display: inline-block;
       width: 8px;
       height: 8px;
-      background-color: #00e0c7;
+      background-color: vars.$color-accent;
       border-radius: 50%;
       margin: 0 0.75rem;
       vertical-align: middle;

@@ -1,16 +1,17 @@
+@use 'variables' as vars;
+
 :host {
   display: block;
   width: 100%;
-  background: linear-gradient(0deg,rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0.6) 84%);
-
-  color: white;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0.6) 84%);
+  color: vars.$color-white;
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 998;
 
   a {
-    font-family: 'Fira Code';
+    font-family: vars.$font-code;
   }
 
   .header-container {
@@ -30,18 +31,86 @@
     flex-wrap: wrap;
   }
 
-  .lang-switch {
-    button {
-      background: transparent;
-      border: 1px solid white;
-      color: white;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 9999px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+  .language-toggle {
+    position: relative;
+    width: 80px;
+    height: 30px;
+    background-color: #0d0d0d;
+    border: 1px solid vars.$color-accent;
+    border-radius: 999px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    cursor: pointer;
+    font-family: sans-serif;
+  }
 
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+  .language-toggle .lang {
+    z-index: 1;
+    flex: 1;
+    text-align: center;
+    color: vars.$color-accent;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .language-toggle .toggle-slider {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    width: 48%;
+    background-color: vars.$color-accent;
+    border-radius: 999px;
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+
+  .language-toggle.active .toggle-slider {
+    left: 50%;
+  }
+
+  .language-toggle.active .de {
+    color: vars.$color-white;
+  }
+
+  .language-toggle:not(.active) .en {
+    color: vars.$color-white;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: black;
+    color: vars.$color-accent;
+    border: 1px solid vars.$color-accent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    .icon {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+        transition: fill 0.3s;
+      }
+    }
+
+    &.active {
+      background-color: vars.$color-accent;
+      color: vars.$color-white;
+
+      svg {
+        fill: currentColor;
       }
     }
   }
@@ -51,7 +120,7 @@
     gap: 1.5rem;
 
     a {
-      color: white;
+      color: vars.$color-white;
       text-decoration: none;
       font-weight: 500;
       position: relative;
@@ -72,16 +141,15 @@
       }
 
       &:hover::after {
-        background-color: #3DCFB6;
+        background-color: vars.$color-accent;
       }
 
       &.active {
-        color: #3DCFB6;
+        color: vars.$color-accent;
       }
     }
   }
 
-  // ======== BURGER BUTTON ========
   .burger {
     display: none;
     flex-direction: column;
@@ -92,17 +160,16 @@
     span {
       width: 25px;
       height: 3px;
-      background-color: white;
+      background-color: vars.$color-white;
       display: block;
       transition: all 0.3s ease;
     }
   }
 
-  // ======== MOBILE NAVIGATION ========
   .mobile-nav {
     display: none;
     flex-direction: column;
-    background-color: #1C1C1C;
+    background-color: vars.$color-dark;
     padding: 1rem 2rem;
     position: absolute;
     top: 100%;
@@ -111,7 +178,7 @@
     z-index: 100;
 
     a {
-      color: white;
+      color: vars.$color-white;
       text-decoration: none;
       padding: 1rem 0;
       border-bottom: 1px solid #444;
@@ -123,7 +190,6 @@
     }
   }
 
-  // ======== RESPONSIVE ========
   @media (max-width: 768px) {
     .header-container {
       flex-direction: row;

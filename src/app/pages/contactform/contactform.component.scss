@@ -1,8 +1,10 @@
+@use 'variables' as vars;
+
 :host {
   display: flex;
   height: 100vh;
   width: 100%;
-  color: white;
+  color: vars.$color-white;
   align-items: center;
   justify-content: center;
 
@@ -24,18 +26,18 @@
     flex: 1;
 
     h2 {
-      font-family: 'Fira Code';
+      font-family: vars.$font-code;
       font-size: 1.5rem;
       font-weight: 300;
-      color: #3DCFB6;
+      color: vars.$color-accent;
       letter-spacing: 2px;
       margin-bottom: 1rem;
     }
 
     p {
-      font-family: 'Karla', sans-serif;
+      font-family: vars.$font-body;
       font-size: 1rem;
-      color: #ccc;
+      color: #ccc; // Falls du möchtest, kannst du hier auch eine Variable anlegen
       max-width: 400px;
     }
   }
@@ -54,11 +56,11 @@
         background-color: transparent;
         border: none;
         border-radius: 8px;
-        color: white;
-        font-family: 'Karla', sans-serif;
+        color: vars.$color-white;
+        font-family: vars.$font-body;
         font-size: 1rem;
         width: 100%;
-        caret-color: #3DCFB6;
+        caret-color: vars.$color-accent;
         text-align: left;
 
         appearance: none;
@@ -78,23 +80,21 @@
       .privacy-checkbox {
         display: flex;
         align-items: flex-start;
-        font-family: 'Karla', sans-serif;
+        font-family: vars.$font-body;
         font-size: 0.9rem;
-        color: white;
+        color: vars.$color-white;
 
         input[type="checkbox"] {
           margin-right: 0.5rem;
           margin-top: 0.3rem;
-          accent-color: #3DCFB6;
-          border: 2px solid #3DCFB6;
+          accent-color: vars.$color-accent;
+          border: 2px solid vars.$color-accent;
           width: 16px;
           height: 16px;
-
-          /* KEIN appearance:none, damit Häkchen sichtbar bleibt */
         }
 
         a {
-          color: #3DCFB6;
+          color: vars.$color-accent;
           text-decoration: underline;
 
           &:hover {
@@ -104,20 +104,20 @@
       }
 
       .submit-btn {
-        border: 2px solid white;
+        border: 2px solid vars.$color-white;
         background: transparent;
-        color: white;
+        color: vars.$color-white;
         padding: 0.8rem 1.2rem;
         font-size: 1rem;
         border-radius: 9999px;
         cursor: pointer;
         transition: all 0.3s ease;
-        font-family: 'Karla', sans-serif;
+        font-family: vars.$font-body;
         width: fit-content;
 
         &:hover {
-          border-color: #3DCFB6;
-          color: #3DCFB6;
+          border-color: vars.$color-accent;
+          color: vars.$color-accent;
         }
 
         &:disabled {
@@ -132,11 +132,11 @@
 .divider {
   border: none;
   height: 2px;
-  background-color: #3DCFB6;
-  margin: -0.5rem 0 1rem 0; // optional: etwas optisch rücken
+  background-color: vars.$color-accent;
+  margin: -0.5rem 0 1rem 0;
 }
 
 .contact-form .section-title {
-  font-family: 'Fira Code', monospace;
-  color: #3DCFB6;
+  font-family: vars.$font-code;
+  color: vars.$color-accent;
 }

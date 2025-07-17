@@ -1,39 +1,43 @@
+@use 'variables' as vars;
+
 .portfolio-section {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: vars.$color-white;
   padding-top: 140px;
   padding-bottom: 120px;
 
   .green {
-    color: #3DCFB6;
+    color: vars.$color-accent;
     font-size: 3rem;
     font-weight: bold;
+    font-family: vars.$font-code;
   }
 
   .green-divider {
     height: 1px;
-    background-color: #3DCFB6;
+    background-color: vars.$color-accent;
     border: none;
     margin: 0;
   }
 
   .portfolio-header {
     h5 {
-      color: #3DCFB6;
-      text-transform: uppercase;
+      color: vars.$color-accent;
       margin-bottom: 0.5rem;
+      font-size: 20px;
+      font-family: vars.$font-code;
     }
 
     p {
       max-width: 600px;
-      color: #ccc;
+      color: vars.$color-white;
     }
   }
 
   .portfolio-content {
     display: flex;
-    flex-direction: row; /* wichtig für Bild rechts außerhalb */
+    flex-direction: row;
     justify-content: flex-start;
     margin-top: 2rem;
 
@@ -41,26 +45,41 @@
       max-width: 800px;
       display: flex;
       flex-direction: column;
-      min-width: 1000px; /* damit die Liste nicht zu schmal wird */
+      min-width: 1000px;
 
       .project-entry {
         cursor: pointer;
-        padding: 0.5rem 0;
+        padding: 20px;
+        display: flex
+;       justify-content: space-between;
 
-        h3 {
-          font-family: monospace;
+        .project-line {
           display: flex;
+          justify-content: space-between;
           align-items: center;
-          gap: 0.5rem;
+          gap: 1rem;
+          flex-wrap: wrap;
 
-          .arrow {
-            opacity: 0;
-            transition: opacity 0.3s ease;
+          h3 {
+            font-family: vars.$font-code;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+
+            .arrow {
+              opacity: 0;
+              transition: opacity 0.3s ease;
+            }
           }
-        }
 
-        .stack {
-          color: #aaa;
+          .stack {
+            margin: 0;
+            color: vars.$color-white;
+            font-family: vars.$font-body;
+            font-size: 0.9rem;
+            white-space: nowrap;
+          }
         }
 
         &:hover {
@@ -68,48 +87,63 @@
 
           .arrow {
             opacity: 1;
-            color: #3DCFB6;
+            color: vars.$color-accent;
           }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        min-width: unset;
+        width: 100%;
+      }
+
+      @media (max-width: 600px) {
+        .project-line {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .stack {
+          margin-top: 0.25rem;
         }
       }
     }
 
     .hover-image {
-  position: sticky;
-  top: 50px;
-  margin-left: 4rem;
-  width: 320px;
-  z-index: 5;
-  flex-shrink: 0;
-  position: relative;
+      position: sticky;
+      top: 50px;
+      margin-left: 4rem;
+      width: 320px;
+      z-index: 5;
+      flex-shrink: 0;
+      position: relative;
 
-  // Hintergrundgrafik mit ::before (hinter dem Bild)
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 20px; // weiter nach unten
-    right: -30px;  // weiter nach rechts
-    width: 320px;  // frei skalierbar!
-    height: 290px;
-    background-image: url('/about/bg_portfolio_section.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    z-index: 0; // liegt unter dem Bild
-    pointer-events: none;
-  }
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        right: -30px;
+        width: 320px;
+        height: 330px;
+        background-image: url('/about/bg_portfolio_section.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        z-index: 0;
+        pointer-events: none;
+      }
 
-  img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-    position: relative;
-    z-index: 1; // über ::before
-  }
+      img {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
 
-  @media (max-width: 1024px) {
-    display: none;
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
   }
-}
-}
 }

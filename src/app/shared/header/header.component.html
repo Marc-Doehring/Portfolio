@@ -1,15 +1,25 @@
 <header>
   <div class="header-container content-wrapper">
     <div class="nav-left">
-      <div class="lang-switch">
-        <button>EN</button>
-        <button>DE</button>
-      </div>
+
+      <div 
+  class="language-toggle" 
+  [class.active]="currentLang === 'de'" 
+  (click)="toggleLanguage()"
+>
+  <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
+  <span class="lang de" [class.active]="currentLang === 'de'">DE</span>
+  <div class="toggle-slider"></div>
+</div>
+
 
       <nav class="nav-links desktop-nav">
-        <a href="#aboutme" [class.active]="currentSection === 'aboutme'" (click)="setCurrentSection('aboutme')">About me</a>
-        <a href="#myskills" [class.active]="currentSection === 'myskills'" (click)="setCurrentSection('myskills')">Skills</a>
-        <a href="#portfolio" [class.active]="currentSection === 'portfolio'" (click)="setCurrentSection('portfolio')">Projects</a>
+        <a href="#aboutme" [class.active]="currentSection === 'aboutme'" (click)="setCurrentSection('aboutme')">About
+          me</a>
+        <a href="#myskills" [class.active]="currentSection === 'myskills'"
+          (click)="setCurrentSection('myskills')">Skills</a>
+        <a href="#portfolio" [class.active]="currentSection === 'portfolio'"
+          (click)="setCurrentSection('portfolio')">Projects</a>
       </nav>
     </div>
 

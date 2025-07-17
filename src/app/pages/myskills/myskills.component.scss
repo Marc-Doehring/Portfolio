@@ -1,11 +1,16 @@
+@use 'variables' as vars;
+
 .myskills-section {
   padding: 8rem 0;
-  color: white;
-  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+  color: vars.$color-white;
+  background: radial-gradient(
+    22.43% 43.85% at 1.22% 52.45%,
+    rgba(8, 70, 59, 0.3) 0%,
+    vars.$color-dark 100%
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
- 
 
   .content-wrapper {
     width: 100%;
@@ -15,8 +20,8 @@
 
   .myskills-wrapper {
     display: flex;
-    gap: 4rem;
-    align-items: center;
+    gap: 16rem;
+    align-items: end;
 
     @media (max-width: 900px) {
       flex-direction: column;
@@ -30,52 +35,52 @@
     flex-direction: column;
 
     .section-label {
-      font-family: 'Fira Code', monospace;
+      font-family: vars.$font-code;
       font-size: 1.25rem;
-      color: #3DCFB6;
+      color: vars.$color-accent;
       margin-bottom: 1rem;
     }
   }
 
   .skills-left {
     flex: 1;
-    border: 2px solid #3DCFB6;
+    border: 2px solid vars.$color-accent;
     padding: 2rem;
     border-radius: 12px;
     background-color: rgba(8, 70, 59, 0.3);
 
     .section-title {
-      font-family: 'Fira Code', monospace;
-      font-size: 2rem;
-      color: #3DCFB6;
-      margin-bottom: 1rem;
+      font-family: vars.$font-code;
+      font-size: 3rem;
+      color: vars.$color-accent;
+      margin-bottom: 2rem;
     }
 
     .section-subtitle {
-      font-family: 'Karla', sans-serif;
+      font-family: vars.$font-body;
       font-size: 1.1rem;
-      color: #ccc;
+      color: #ccc; // Wenn gewünscht, auch als Variable definieren
       margin-bottom: 2rem;
     }
 
     .ghost-button {
       padding: 0.75rem 1.5rem;
       background: transparent;
-      border: 1px solid #3DCFB6;
-      color: #3DCFB6;
+      border: 1px solid vars.$color-accent;
+      color: vars.$color-accent;
       border-radius: 9999px;
       cursor: pointer;
       transition: all 0.3s ease;
 
       &:hover {
-        background-color: #3DCFB6;
-        color: #1C1C1C;
+        background-color: vars.$color-accent;
+        color: vars.$color-dark;
       }
     }
   }
 
   .skills-right {
-    flex: 2;
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
@@ -144,9 +149,9 @@
 
   .hover-hint {
     position: absolute;
-    top: -80px; // ❗️Bild 30px höher setzen
+    top: -80px; // Bild 30px höher setzen
     left: 25%;
-    transform: translateX(-50%) scale(1.2); // ❗️zentriert + vergrößert
+    transform: translateX(-50%) scale(1.2); // zentriert + vergrößert
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -155,8 +160,6 @@
 
   &:hover .hover-hint {
     opacity: 1;
-    transform: translateX(-50%) scale(1.5); // ❗️größer beim Hover
+    transform: translateX(-50%) scale(1.5); // größer beim Hover
   }
 }
-
-

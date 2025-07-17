@@ -1,6 +1,7 @@
+@use 'variables' as vars;
+
 .say-about-me-section {
-  
-  color: white;
+  color: vars.$color-white;
   padding: 4rem 1rem;
   text-align: center;
 
@@ -11,9 +12,9 @@
   }
 
   .section-label {
-    font-family: 'Fira Code', monospace;
+    font-family: vars.$font-code;
     font-size: 1.6rem;
-    color: #3dcfb6;
+    color: vars.$color-accent;
     margin-bottom: 2rem;
   }
 
@@ -51,18 +52,18 @@
   .testimonial {
     flex: 0 0 100%;
     max-width: 100%;
-    background-color: rgba(61, 207, 182, 0.1);
-    border: 1px solid #3dcfb6;
+    background-color: rgba(61, 207, 182, 0.1); // bleibt rgba
+    border: 1px solid vars.$color-accent;
     border-radius: 24px;
     padding: 3rem 2rem 2rem 2rem;
-    font-family: 'Karla', sans-serif;
+    font-family: vars.$font-body;
     box-sizing: border-box;
     opacity: 1;
     transition: all 0.4s ease;
 
     .quote {
       font-size: 1.2rem;
-      color: #ccc;
+      color: vars.$color-gray-light;
       text-align: left;
       min-height: 80px;
     }
@@ -70,8 +71,8 @@
     .author {
       text-align: right;
       font-size: 1rem;
-      color: #3dcfb6;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: vars.$color-accent;
+      border-top: 1px solid rgba(255, 255, 255, 0.2); // bleibt rgba
       padding-top: 1rem;
       margin-top: 1rem;
     }
@@ -87,13 +88,13 @@
     .arrow {
       background: none;
       border: none;
-      color: white;
+      color: vars.$color-white;
       font-size: 2rem;
       cursor: pointer;
       transition: color 0.3s ease;
 
       &:hover {
-        color: #3dcfb6;
+        color: vars.$color-accent;
       }
     }
 
@@ -105,13 +106,13 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background-color: white;
+        background-color: vars.$color-white;
         opacity: 0.4;
         cursor: pointer;
         transition: all 0.3s ease;
 
         &.active {
-          background-color: #3dcfb6;
+          background-color: vars.$color-accent;
           opacity: 1;
         }
       }
