@@ -31,7 +31,7 @@ export class PortfolioComponent implements AfterViewInit {
       ],
       description: 'A jump-and-run browser game featuring chickens and enemies.',
       liveLink: 'https://meine-app.com',
-      githubLink: 'https://github.com/myuser/myapp',
+      githubLink: 'https://github.com/Marc-Doehring'
     },
     {
       title: 'DA Bubble',

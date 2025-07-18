@@ -140,17 +140,17 @@
   display: inline-block;
 
   .base-image {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-  }
+  display: block;
+  width: 100%;
+  max-width: 600px; /* oder größer */
+  height: auto;
+  border-radius: 8px;
+}
 
   .hover-hint {
     position: absolute;
     top: -80px; // Bild 30px höher setzen
-    left: 25%;
+    left: 41%;
     transform: translateX(-50%) scale(1.2); // zentriert + vergrößert
     opacity: 0;
     pointer-events: none;

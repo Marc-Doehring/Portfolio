@@ -1,4 +1,5 @@
-// Farben
+@use 'variables' as vars;
+
 $color-bg-footer: #303030;
 $color-green: #3DCFB6;
 $color-white: #fff;
@@ -6,9 +7,9 @@ $color-gray-light: #ccc;
 
 // Footer Styles
 .footer-section {
-  color: $color-white;
+  color: vars.$color-white;
   padding: 2rem 0;
-  font-family: 'Karla', sans-serif;
+  font-family: vars.$font-body;
 
   .footer-wrapper {
     max-width: 1440px;
@@ -30,14 +31,14 @@ $color-gray-light: #ccc;
       .footer-location {
         font-weight: 300;
         font-size: 1rem;
-        color: $color-gray-light;
+        color: vars.$color-gray-light;
       }
     }
 
     .footer-center {
       font-weight: 300;
       font-size: 1rem;
-      color: $color-green;
+      color: vars.$color-accent;
       text-align: center;
       flex: 1;
     }
@@ -52,7 +53,7 @@ $color-gray-light: #ccc;
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: $color-white;
+        color: vars.$color-white;
         text-decoration: none;
         font-weight: 400;
         transition: color 0.3s ease;
@@ -76,7 +77,7 @@ $color-gray-light: #ccc;
           color: $color-green;
 
           &::before {
-            background-color: $color-green;
+            background-color: vars.$color-accent;
           }
         }
       }
