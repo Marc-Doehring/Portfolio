@@ -83,14 +83,16 @@
         }
 
         &:hover {
-          background-color: rgba(61, 207, 182, 0.2);
+  background-color: rgba(61, 207, 182, 0.2);
+}
 
-          .arrow {
-            opacity: 1;
-            color: vars.$color-accent;
-          }
-        }
+// Wichtig: außerhalb der &:hover-Regel definieren!
+&:hover .arrow {
+  opacity: 1;
+  color: vars.$color-accent;
+}
       }
+
 
       @media (max-width: 1200px) {
         min-width: unset;
@@ -124,7 +126,7 @@
         bottom: 20px;
         right: -30px;
         width: 320px;
-        height: 330px;
+        height: 290px;
         background-image: url('/about/bg_portfolio_section.svg');
         background-repeat: no-repeat;
         background-size: contain;

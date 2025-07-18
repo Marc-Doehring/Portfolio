@@ -62,7 +62,7 @@
     }
 
     .aboutme-box {
-      background-color: rgba(255, 255, 255, 0.03);
+      background-color: vars.$background-color;
       border: 2px solid vars.$color-accent;
       border-radius: 1rem;
       padding: 2rem;

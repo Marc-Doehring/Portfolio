@@ -9,7 +9,7 @@
       <h1>{{ project?.title }}</h1>
       <h2 *ngIf="project?.subtitle">{{ project?.subtitle }}</h2>
       <p>{{ project?.description }}</p>
-      <p class="stack">{{ project?.stack }}</p>
+      
 
       <div class="tech-icons" *ngIf="project?.icons?.length">
         <img *ngFor="let icon of project.icons" [src]="icon" alt="Tech Icon" />

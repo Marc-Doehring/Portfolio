@@ -52,7 +52,7 @@
   .testimonial {
     flex: 0 0 100%;
     max-width: 100%;
-    background-color: rgba(61, 207, 182, 0.1); // bleibt rgba
+    background-color: vars.$background-color;
     border: 1px solid vars.$color-accent;
     border-radius: 24px;
     padding: 3rem 2rem 2rem 2rem;
