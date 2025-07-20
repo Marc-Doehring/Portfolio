@@ -9,34 +9,47 @@
     <!-- Projektliste links -->
     <div class="project-list">
       <hr class="green-divider" />
+
       <ng-container *ngFor="let project of projects; let i = index; trackBy: trackByIndex">
-        <div #projectEntry class="project-entry" (mouseenter)="hoveredProjectIndex = i"
-          (mouseleave)="hoveredProjectIndex = null" (click)="openModal(i)">
-          <h3>
-            {{ project.title }}
-            <span class="arrow">&nearr;</span>
-          </h3>
-          <p class="stack">{{ project.stack }}</p>
+        <div class="project-entry"
+             (mouseenter)="hoveredProjectIndex = i"
+             (mouseleave)="hoveredProjectIndex = null"
+             (click)="openModal(i)">
+          <div class="project-line">
+            <h3>
+              {{ project.title }}
+              <span class="arrow">&nearr;</span>
+            </h3>
+            <p class="stack">
+              <ng-container *ngFor="let tech of project.stack | stackSplit; let last = last">
+                <span>{{ tech }}</span>
+                <span *ngIf="!last" class="stack-divider">|</span>
+              </ng-container>
+            </p>
+          </div>
         </div>
+
+        <!-- Nur zwischen Projekten eine Trennlinie -->
         <hr *ngIf="i < projects.length - 1" class="green-divider" />
       </ng-container>
       <hr class="green-divider" />
+
     </div>
 
-    <!-- Hover-Bild rechts außerhalb des Projektbereichs -->
+    <!-- Hover-Bild rechts -->
     <div class="hover-image" *ngIf="hoveredProjectIndex !== null">
-      <img [src]="projects[hoveredProjectIndex].image" [alt]="projects[hoveredProjectIndex].title" loading="lazy" />
+      <img [src]="projects[hoveredProjectIndex].image"
+           [alt]="projects[hoveredProjectIndex].title"
+           loading="lazy" />
     </div>
   </div>
 
   <!-- Modal Overlay -->
-<app-modal
-  *ngIf="selectedProjectIndex !== null"
-  [project]="projects[selectedProjectIndex]"
-  [projects]="projects"
-  [currentIndex]="selectedProjectIndex"
-  (changeProject)="selectedProjectIndex = $event"
-  (close)="closeModal()"
-/>
-
+  <app-modal *ngIf="selectedProjectIndex !== null"
+             [project]="projects[selectedProjectIndex]"
+             [projects]="projects"
+             [currentIndex]="selectedProjectIndex"
+             (changeProject)="selectedProjectIndex = $event"
+             (close)="closeModal()">
+  </app-modal>
 </section>

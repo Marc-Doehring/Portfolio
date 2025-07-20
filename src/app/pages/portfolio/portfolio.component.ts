@@ -1,11 +1,12 @@
 import { Component, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../../shared/modal/modal.component';
+import { StackSplitPipe } from '../../pipes/stack-split.pipe';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, ModalComponent],
+  imports: [CommonModule, ModalComponent, StackSplitPipe],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })

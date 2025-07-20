@@ -38,20 +38,30 @@
   .portfolio-content {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     margin-top: 2rem;
 
     .project-list {
       max-width: 800px;
+      min-width: 1000px;
       display: flex;
       flex-direction: column;
-      min-width: 1000px;
 
       .project-entry {
         cursor: pointer;
-        padding: 20px;
-        display: flex
-;       justify-content: space-between;
+        padding: 30px;
+        transition: background-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:hover {
+          background-color: rgba(61, 207, 182, 0.2);
+        }
+
+        &.hovered .arrow {
+          opacity: 1;
+          color: vars.$color-accent;
+        }
 
         .project-line {
           display: flex;
@@ -70,6 +80,10 @@
             .arrow {
               opacity: 0;
               transition: opacity 0.3s ease;
+              color: vars.$color-white;
+              font-size: 1.3rem;
+              user-select: none;
+              z-index: 999;
             }
           }
 
@@ -79,20 +93,14 @@
             font-family: vars.$font-body;
             font-size: 0.9rem;
             white-space: nowrap;
+
+            .stack-divider {
+              color: vars.$color-accent;
+              margin: 0 0.4rem;
+            }
           }
         }
-
-        &:hover {
-  background-color: rgba(61, 207, 182, 0.2);
-}
-
-// Wichtig: außerhalb der &:hover-Regel definieren!
-&:hover .arrow {
-  opacity: 1;
-  color: vars.$color-accent;
-}
       }
-
 
       @media (max-width: 1200px) {
         min-width: unset;
@@ -113,12 +121,12 @@
 
     .hover-image {
       position: sticky;
-      top: 50px;
+      top: 30px;
       margin-left: 4rem;
       width: 320px;
-      z-index: 5;
       flex-shrink: 0;
       position: relative;
+      z-index: 5;
 
       &::before {
         content: '';
@@ -126,7 +134,7 @@
         bottom: 20px;
         right: -30px;
         width: 320px;
-        height: 290px;
+        height: 220px;
         background-image: url('/about/bg_portfolio_section.svg');
         background-repeat: no-repeat;
         background-size: contain;

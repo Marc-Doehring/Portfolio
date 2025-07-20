@@ -20,8 +20,9 @@
 
   .myskills-wrapper {
     display: flex;
-    gap: 16rem;
-    align-items: end;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: space-between;
 
     @media (max-width: 900px) {
       flex-direction: column;
@@ -31,6 +32,8 @@
 
   .skills-left-column {
     flex: 1;
+    min-width: 300px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
 
@@ -40,41 +43,60 @@
       color: vars.$color-accent;
       margin-bottom: 1rem;
     }
-  }
 
-  .skills-left {
-    flex: 1;
-    border: 2px solid vars.$color-accent;
-    padding: 2rem;
-    border-radius: 12px;
-    background-color: vars.$background-color;
+    .skills-left {
+      border: 2px solid vars.$color-accent;
+      padding: 2rem;
+      border-radius: 12px;
+      background-color: vars.$background-color;
 
-    .section-title {
-      font-family: vars.$font-code;
-      font-size: 3rem;
-      color: vars.$color-accent;
-      margin-bottom: 2rem;
-    }
+      .section-title {
+        font-family: vars.$font-code;
+        font-size: 3rem;
+        color: vars.$color-accent;
+        margin-bottom: 2rem;
+      }
 
-    .section-subtitle {
-      font-family: vars.$font-body;
-      font-size: 1.1rem;
-      color: #ccc; // Wenn gewünscht, auch als Variable definieren
-      margin-bottom: 2rem;
-    }
+      .section-subtitle {
+        font-family: vars.$font-body;
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 2rem;
+      }
 
-    .ghost-button {
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: 1px solid vars.$color-accent;
-      color: vars.$color-accent;
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      .ghost-button {
+        padding: 0.75rem 1.5rem;
+        background: transparent;
+        border: 1px solid vars.$color-accent;
+        color: vars.$color-accent;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: all 0.3s ease;
 
-      &:hover {
-        background-color: vars.$color-accent;
-        color: vars.$color-dark;
+        &:hover {
+          background-color: vars.$color-accent;
+          color: vars.$color-dark;
+        }
+      }
+
+      .skill-request-box {
+        margin-top: 2rem;
+
+        h3 {
+          font-size: 1.4rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+
+          .highlight-green {
+            color: vars.$color-accent;
+          }
+        }
+
+        p {
+          font-size: 1rem;
+          color: #ccc;
+          margin-bottom: 1.5rem;
+        }
       }
     }
   }
@@ -82,8 +104,10 @@
   .skills-right {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    align-content: start;
+    padding-top: 60px;
 
     img {
       width: 100%;
@@ -99,21 +123,66 @@
       }
     }
 
-    @media (max-width: 900px) {
+    .skill-image-wrapper {
+      position: relative;
+      display: inline-block;
+
+      .base-image {
+        display: block;
+        width: 100%;
+        
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .hover-hint {
+        position: absolute;
+        top: -80px;
+        left: 80px;
+        transform: translateX(-50%) scale(1.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 10;
+      }
+
+      &:hover .hover-hint {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.5);
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .skills-right {
       grid-template-columns: repeat(3, 1fr);
-      justify-items: center;
 
       img {
         max-width: 60px;
       }
     }
 
-    @media (max-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
+    .skills-left-column {
+      .skills-left {
+        padding: 1.5rem;
 
-      img {
-        max-width: 50px;
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .section-subtitle {
+          font-size: 1rem;
+        }
+
+        .skill-request-box {
+          h3 {
+            font-size: 1.2rem;
+          }
+
+          p {
+            font-size: 0.95rem;
+          }
+        }
       }
     }
   }
@@ -121,45 +190,13 @@
   @media (max-width: 600px) {
     padding: 4rem 1rem;
 
-    .skills-left {
-      padding: 1.5rem;
+    .skills-right {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
 
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .section-subtitle {
-        font-size: 1rem;
+      img {
+        max-width: 50px;
       }
     }
-  }
-}
-
-.skill-image-wrapper {
-  position: relative;
-  display: inline-block;
-
-  .base-image {
-  display: block;
-  width: 100%;
-  max-width: 600px; /* oder größer */
-  height: auto;
-  border-radius: 8px;
-}
-
-  .hover-hint {
-    position: absolute;
-    top: -80px; // Bild 30px höher setzen
-    left: 41%;
-    transform: translateX(-50%) scale(1.2); // zentriert + vergrößert
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 10;
-  }
-
-  &:hover .hover-hint {
-    opacity: 1;
-    transform: translateX(-50%) scale(1.5); // größer beim Hover
   }
 }
