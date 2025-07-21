@@ -1,13 +1,11 @@
 <header>
   <div class="header-container content-wrapper">
     <div class="nav-left">
-
       <div class="language-toggle" [class.active]="currentLang === 'de'" (click)="toggleLanguage()">
         <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
         <span class="lang de" [class.active]="currentLang === 'de'">DE</span>
         <div class="toggle-slider"></div>
       </div>
-
 
       <nav class="nav-links desktop-nav">
         <a href="#aboutme" [class.active]="currentSection === 'aboutme'" (click)="setCurrentSection('aboutme')">About
@@ -19,11 +17,13 @@
       </nav>
     </div>
 
-    <div class="logo">
-      <img src="/header/Unbenannt.png" alt="Logo" />
-    </div>
 
-    <!-- Burger Button -->
+   <a href="#" class="logo" aria-label="Zur Startseite" (click)="scrollOrNavigate($event)">
+  <img src="/header/Unbenannt.png" alt="Logo" />
+</a>
+
+
+
     <div class="burger" (click)="toggleMobileMenu()">
       <span></span>
       <span></span>
@@ -31,13 +31,13 @@
     </div>
   </div>
 
-  <!-- Mobile Menü -->
+
   <div class="mobile-nav" [class.open]="mobileMenuOpen">
     <a href="#aboutme" (click)="navigateMobile('aboutme')">About me</a>
     <a href="#myskills" (click)="navigateMobile('myskills')">Skills</a>
     <a href="#portfolio" (click)="navigateMobile('portfolio')">Projects</a>
 
-    <!-- Sprachumschalter auch im mobilen Menü -->
+
     <div class="language-toggle mobile-toggle" [class.active]="currentLang === 'de'" (click)="toggleLanguage()">
       <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
       <span class="lang de" [class.active]="currentLang === 'de'">DE</span>

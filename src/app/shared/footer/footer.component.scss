@@ -59,6 +59,8 @@ $color-gray-light: #ccc;
         transition: color 0.3s ease;
         position: relative;
         padding-left: 1.2rem;
+        cursor: pointer; // 👉 HIER NEU!
+
 
         &::before {
           content: '';

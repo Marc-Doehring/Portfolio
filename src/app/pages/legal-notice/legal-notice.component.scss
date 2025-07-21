@@ -1,0 +1,32 @@
+@use 'variables' as vars;
+
+.legal-notice-section {
+  padding: 4rem 2rem;
+  color: vars.$color-white;
+  font-family: vars.$font-body;
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    h1.legal-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: vars.$color-accent;
+    }
+
+    p {
+      margin-bottom: 1rem;
+
+      a {
+        color: vars.$color-accent;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
