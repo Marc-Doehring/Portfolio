@@ -13,6 +13,7 @@ import { StackSplitPipe } from '../../pipes/stack-split.pipe';
 export class PortfolioComponent implements AfterViewInit {
   projects = [
     {
+      id: 1,
       title: 'Join',
       stack: 'Angular | TypeScript | HTML | CSS | Firebase',
       image: '/portfolio/join.png',
@@ -24,6 +25,7 @@ export class PortfolioComponent implements AfterViewInit {
       githubLink: 'https://github.com/myuser/myapp',
     },
     {
+      id: 2,
       title: 'El Pollo Loco',
       stack: 'HTML | CSS | JavaScript',
       image: '/portfolio/loco.png',
@@ -35,6 +37,7 @@ export class PortfolioComponent implements AfterViewInit {
       githubLink: 'https://github.com/Marc-Doehring'
     },
     {
+      id: 3,
       title: 'DA Bubble',
       stack: 'Angular | Firebase | TypeScript',
       image: '/portfolio/bubble.png',

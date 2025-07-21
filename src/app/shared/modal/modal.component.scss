@@ -47,10 +47,10 @@ $muted-text: #c2c2c2;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 1rem 0;
     line-height: 1.6;
-    color: $muted-text;
+    
   }
 
   .stack {
@@ -154,6 +154,14 @@ $muted-text: #c2c2c2;
       }
     }
   }
+}
+
+.project-id {
+  font-size: 48px !important; 
+  color: #3DCFB6;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
 
