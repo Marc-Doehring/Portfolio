@@ -35,7 +35,7 @@
     position: relative;
     width: 80px;
     height: 30px;
-    // background-color: #0d0d0d;
+    
     border: 1px solid vars.$color-accent;
     border-radius: 999px;
     display: flex;
@@ -163,19 +163,21 @@
       background-color: vars.$color-white;
       display: block;
       transition: all 0.3s ease;
+      
     }
   }
 
   .mobile-nav {
     display: none;
     flex-direction: column;
-    background-color: vars.$color-dark;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0.6) 84%);
+    color: vars.$color-white;
     padding: 1rem 2rem;
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
     z-index: 100;
+    border-radius: 20px;
 
     a {
       color: vars.$color-white;
@@ -213,4 +215,11 @@
       }
     }
   }
+}
+
+.language-toggle.mobile-toggle {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

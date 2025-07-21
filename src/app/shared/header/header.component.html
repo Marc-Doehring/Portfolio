@@ -2,15 +2,11 @@
   <div class="header-container content-wrapper">
     <div class="nav-left">
 
-      <div 
-  class="language-toggle" 
-  [class.active]="currentLang === 'de'" 
-  (click)="toggleLanguage()"
->
-  <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
-  <span class="lang de" [class.active]="currentLang === 'de'">DE</span>
-  <div class="toggle-slider"></div>
-</div>
+      <div class="language-toggle" [class.active]="currentLang === 'de'" (click)="toggleLanguage()">
+        <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
+        <span class="lang de" [class.active]="currentLang === 'de'">DE</span>
+        <div class="toggle-slider"></div>
+      </div>
 
 
       <nav class="nav-links desktop-nav">
@@ -40,5 +36,12 @@
     <a href="#aboutme" (click)="navigateMobile('aboutme')">About me</a>
     <a href="#myskills" (click)="navigateMobile('myskills')">Skills</a>
     <a href="#portfolio" (click)="navigateMobile('portfolio')">Projects</a>
+
+    <!-- Sprachumschalter auch im mobilen Menü -->
+    <div class="language-toggle mobile-toggle" [class.active]="currentLang === 'de'" (click)="toggleLanguage()">
+      <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
+      <span class="lang de" [class.active]="currentLang === 'de'">DE</span>
+      <div class="toggle-slider"></div>
+    </div>
   </div>
 </header>
