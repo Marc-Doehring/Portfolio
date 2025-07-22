@@ -1,0 +1,14 @@
+{
+  "HOME": {
+    "HEADLINE": "Frontend Entwickler",
+    "SUBHEAD": "Marc Döhring",
+    "CHECK_WORK": "Meine Arbeiten",
+    "CONTACT": "Kontakt",
+    "MARQUEE": "Frontend Entwickler <span class='green-dot'></span> mit Sitz in Duisburg <span class='green-dot'></span> verfügbar für Jobs <span class='green-dot'></span> offen für Remote-Arbeit"
+  },
+  "NAV": {
+    "ABOUT_ME": "Über mich",
+    "SKILLS": "Fähigkeiten",
+    "PROJECTS": "Projekte"
+  }
+}

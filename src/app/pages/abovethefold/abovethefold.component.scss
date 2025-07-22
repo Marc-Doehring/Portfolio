@@ -97,6 +97,22 @@
     color: vars.$color-white;
   }
 
+  .email-icon {
+    display: none;
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      fill: vars.$color-accent;
+      transition: fill 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        fill: vars.$color-white;
+        transform: scale(1.1);
+      }
+    }
+  }
+
   .icon-group {
     display: flex;
     flex-direction: column;
@@ -237,6 +253,16 @@
 
   .marquee {
     font-size: 0.95rem;
+  }
+
+  .right-sidebar {
+    .email {
+      display: none;
+    }
+
+    .email-icon {
+      display: inline-block;
+    }
   }
 }
 

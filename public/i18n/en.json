@@ -1,0 +1,14 @@
+{
+  "HOME": {
+    "HEADLINE": "Frontend Developer",
+    "SUBHEAD": "Marc Döhring",
+    "CHECK_WORK": "Check my work",
+    "CONTACT": "Contact",
+    "MARQUEE": "Frontend Developer <span class='green-dot'></span> Based in Duisburg <span class='green-dot'></span> open to work <span class='green-dot'></span> available for remote work"
+  },
+  "NAV": {
+    "ABOUT_ME": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects"
+  }
+}
