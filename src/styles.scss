@@ -45,7 +45,18 @@ html {
       animation: slideLoop 3s ease-in-out infinite;
     }
   }
+
+  // 🔁 Mobile: dauerhaft animiert und grün
+  @media (max-width: 768px) {
+    border-color: vars.$color-accent;
+    color: vars.$color-accent;
+
+    span {
+      animation: slideLoop 3s ease-in-out infinite;
+    }
+  }
 }
+
 
 @keyframes slideLoop {
   0% {

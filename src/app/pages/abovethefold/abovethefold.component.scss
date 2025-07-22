@@ -157,7 +157,7 @@
 /* Marquee */
 .marquee {
   position: absolute;
-  bottom: 0;
+  bottom: 40px;
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.05);
@@ -250,11 +250,11 @@
   }
 
   .text-box h2 {
-    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    font-size: clamp(1.5rem, 2.5vw, 1.2rem);
   }
 
   .text-box h1 {
-    font-size: clamp(2rem, 10vw, 3.5rem);
+    font-size: clamp(3rem, 10vw, 3.5rem);
   }
 
   .button-group {
