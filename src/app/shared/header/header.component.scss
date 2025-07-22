@@ -168,29 +168,33 @@
   }
 
   .mobile-nav {
-    display: none;
-    flex-direction: column;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0.6) 84%);
+  display: none;
+  flex-direction: column;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0.6) 84%);
+  color: vars.$color-white;
+  padding: 0rem 1.2rem; // ⬅️ Weniger Padding
+  position: absolute;
+  right: 1rem; // ⬅️ kleiner Abstand zum Rand
+  z-index: 100;
+  border-radius: 12px; // ⬅️ etwas kleiner
+
+  a {
     color: vars.$color-white;
-    padding: 1rem 2rem;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 100;
-    border-radius: 20px;
-
-    a {
-      color: vars.$color-white;
-      text-decoration: none;
-      padding: 1rem 0;
-      border-bottom: 1px solid #444;
-      font-weight: 500;
-    }
-
-    &.open {
-      display: flex;
-    }
+    text-decoration: none;
+    padding: 0.7rem 0; // ⬅️ etwas schmaler
+    font-weight: 500;
+    font-size: 0.9rem; // ⬅️ optional etwas kleiner
   }
+
+  &.open {
+    display: flex;
+  }
+
+  // Optional: letzte Zeile ohne Border
+  a:last-child {
+    border-bottom: none;
+  }
+}
 
   @media (max-width: 768px) {
     .header-container {
@@ -218,7 +222,7 @@
 }
 
 .language-toggle.mobile-toggle {
-  margin-top: 2rem;
+  
   display: flex;
   justify-content: center;
   align-items: center;

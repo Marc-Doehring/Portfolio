@@ -7,130 +7,138 @@
   color: vars.$color-white;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden; // verhindert horizontales Scrollen
 
   .contact-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; // Abstand über verfügbare Breite
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  gap: clamp(2rem, 4vw, 6rem); // responsiver Abstand
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: clamp(2rem, 4vw, 6rem);
+    box-sizing: border-box;
 
-  @media (max-width: 1050px) {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
-
-  .contact-text {
-    flex: 1;
-
-    h2 {
-      font-family: vars.$font-code;
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: vars.$color-accent;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-family: vars.$font-body;
-      font-size: 1rem;
-      color: #ccc; // Falls du möchtest, kannst du hier auch eine Variable anlegen
-      max-width: 400px;
-    }
-  }
-
-  .contact-form-wrapper {
-    flex: 2;
-
-    .contact-form {
-      display: flex;
+    @media (max-width: 1050px) {
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 2rem;
+    }
 
-      input[type="text"],
-      input[type="email"],
-      textarea {
-        background-color: transparent;
-        border: none;
-        border-radius: 8px;
-        color: vars.$color-white;
-        font-family: vars.$font-body;
-        font-size: 1rem;
-        width: 100%;
-        caret-color: vars.$color-accent;
-        text-align: left;
+    .contact-text {
+      flex: 1;
+      min-width: 0;
 
-        appearance: none;
-        line-height: normal;
-
-        &::placeholder {
-          color: #ccc;
-          opacity: 1;
-        }
-
-        &:focus {
-          outline: none;
-          box-shadow: none;
-        }
+      h2 {
+        font-family: vars.$font-code;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: vars.$color-accent;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
       }
 
-      .privacy-checkbox {
-        display: flex;
-        align-items: flex-start;
+      p {
         font-family: vars.$font-body;
-        font-size: 0.9rem;
-        color: vars.$color-white;
+        font-size: 1rem;
+        color: #ccc;
+        max-width: 400px;
+      }
+    }
 
-        input[type="checkbox"] {
-          margin-right: 0.5rem;
-          margin-top: 0.3rem;
-          accent-color: vars.$color-accent;
-          border: 2px solid vars.$color-accent;
-          width: 16px;
-          height: 16px;
+    .contact-form-wrapper {
+      flex: 2;
+      min-width: 0;
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+          background-color: transparent;
+          border: none;
+          border-radius: 8px;
+          color: vars.$color-white;
+          font-family: vars.$font-body;
+          font-size: 1rem;
+          width: 100%;
+          max-width: 100%;
+          padding: 0.8rem;
+          box-sizing: border-box;
+          caret-color: vars.$color-accent;
+          text-align: left;
+          appearance: none;
+          line-height: normal;
+
+          &::placeholder {
+            color: #ccc;
+            opacity: 1;
+          }
+
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
         }
 
-        a {
-          color: vars.$color-accent;
-          text-decoration: underline;
+        .privacy-checkbox {
+          display: flex;
+          align-items: flex-start;
+          font-family: vars.$font-body;
+          font-size: 0.9rem;
+          color: vars.$color-white;
+
+          input[type="checkbox"] {
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+            accent-color: vars.$color-accent;
+            border: 2px solid vars.$color-accent;
+            width: 16px;
+            height: 16px;
+          }
+
+          a {
+            color: vars.$color-accent;
+            text-decoration: underline;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+
+        .submit-btn {
+          border: 2px solid vars.$color-white;
+          background: transparent;
+          color: vars.$color-white;
+          padding: 0.8rem 1.2rem;
+          font-size: 1rem;
+          border-radius: 9999px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-family: vars.$font-body;
+          width: fit-content;
 
           &:hover {
-            text-decoration: none;
+            border-color: vars.$color-accent;
+            color: vars.$color-accent;
+          }
+
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
           }
         }
       }
-
-      .submit-btn {
-        border: 2px solid vars.$color-white;
-        background: transparent;
-        color: vars.$color-white;
-        padding: 0.8rem 1.2rem;
-        font-size: 1rem;
-        border-radius: 9999px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-family: vars.$font-body;
-        width: fit-content;
-
-        &:hover {
-          border-color: vars.$color-accent;
-          color: vars.$color-accent;
-        }
-
-        &:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-      }
     }
   }
 }
 
+// Divider
 .divider {
   border: none;
   height: 2px;
@@ -138,7 +146,14 @@
   margin: -0.5rem 0 1rem 0;
 }
 
+// Sektionstitel
 .contact-form .section-title {
   font-family: vars.$font-code;
   color: vars.$color-accent;
+}
+
+// Globale Fallbacks für Sicherheit
+*, *::before, *::after {
+  box-sizing: border-box;
+  min-width: 0; // wichtig für Flexbox + Responsive
 }

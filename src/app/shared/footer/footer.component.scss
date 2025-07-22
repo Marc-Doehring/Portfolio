@@ -1,10 +1,5 @@
 @use 'variables' as vars;
 
-$color-bg-footer: #303030;
-$color-green: #3DCFB6;
-$color-white: #fff;
-$color-gray-light: #ccc;
-
 // Footer Styles
 .footer-section {
   color: vars.$color-white;
@@ -34,6 +29,29 @@ $color-gray-light: #ccc;
         color: vars.$color-gray-light;
       }
     }
+
+    .footer-left-right-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+  .footer-left,
+  .footer-right {
+    flex: 1;
+  }
+
+  .footer-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-right {
+    align-items: flex-end;
+    text-align: left;
+  }
+}
+
 
     .footer-center {
       font-weight: 300;
@@ -76,7 +94,7 @@ $color-gray-light: #ccc;
         }
 
         &:hover {
-          color: $color-green;
+          color: vars.$color-accent;
 
           &::before {
             background-color: vars.$color-accent;
@@ -87,21 +105,29 @@ $color-gray-light: #ccc;
   }
 
   @media (max-width: 700px) {
-    .footer-wrapper {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .footer-left-right-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 2rem;
+      width: 100%;
+      
 
       .footer-left,
-      .footer-center,
       .footer-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         text-align: center;
       }
 
       .footer-right {
-        align-items: center;
-
         a {
           justify-content: center;
           padding-left: 0;
@@ -114,7 +140,12 @@ $color-gray-light: #ccc;
         }
       }
     }
+
+    .footer-center {
+      text-align: center;
+    }
   }
+}
 }
 
 

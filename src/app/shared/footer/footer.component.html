@@ -1,29 +1,33 @@
 <footer id="footer" class="footer-section">
   <div class="content-wrapper footer-wrapper">
 
-    <!-- Links -->
-    <div class="footer-left">
-      <a routerLink="/" (click)="scrollToTop()" class="logo" aria-label="Zur Startseite">
-        <img src="/header/Unbenannt.png" alt="Marc Döhring Logo">
-      </a>
-      <div class="footer-role">Web Developer</div>
-      <div class="footer-location">Duisburg, Germany</div>
+    <!-- Neue Wrapper-Zeile für Left & Right -->
+    <div class="footer-left-right-row">
+      
+      <!-- Links -->
+      <div class="footer-left">
+        <a routerLink="/" (click)="scrollToTop()" class="logo" aria-label="Zur Startseite">
+          <img src="/header/Unbenannt.png" alt="Marc Döhring Logo">
+        </a>
+        <div class="footer-role">Web Developer</div>
+        <div class="footer-location">Duisburg, Germany</div>
+      </div>
+
+      <!-- Rechts -->
+      <div class="footer-right">
+        <a href="https://github.com/deinprofil" target="_blank" rel="noopener">Github</a>
+        <a href="https://linkedin.com/in/deinprofil" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:email@beispiel.de">Email</a>
+        <a routerLink="/legal-notice">Legal Notice</a>
+      </div>
+
     </div>
 
-    <!-- Mitte -->
+    <!-- Mitte (Copyright-Zeile unten) -->
     <div class="footer-center">
       <div class="footer-copyright">
         &copy; Marc Döhring 2025
       </div>
-    </div>
-
-    <!-- Rechts -->
-    <div class="footer-right">
-      <a href="https://github.com/deinprofil" target="_blank" rel="noopener">Github</a>
-      <a href="https://linkedin.com/in/deinprofil" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:email@beispiel.de">Email</a>
-      
-      <a routerLink="/legal-notice">Legal Notice</a>
     </div>
 
   </div>
