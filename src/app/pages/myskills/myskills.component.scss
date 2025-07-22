@@ -1,6 +1,7 @@
 @use 'variables' as vars;
 
 .myskills-section {
+  width: 100%;
   padding: 8rem 0;
   color: vars.$color-white;
   background: radial-gradient(
@@ -13,9 +14,9 @@
   background-repeat: no-repeat;
 
   .content-wrapper {
-    width: 100%;
+    width: 90%;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: auto;
   }
 
   .myskills-wrapper {
@@ -102,7 +103,7 @@
   }
 
   .skills-right {
-    flex: 1;
+    // flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5rem;
@@ -157,9 +158,9 @@
     .skills-right {
       grid-template-columns: repeat(3, 1fr);
 
-      img {
-        max-width: 60px;
-      }
+      // img {
+      //   max-width: 60px;
+      // }
     }
 
     .skills-left-column {
@@ -188,15 +189,15 @@
   }
 
   @media (max-width: 600px) {
-    padding: 4rem 1rem;
+    
 
     .skills-right {
       grid-template-columns: repeat(2, 1fr);
       gap: 0.75rem;
 
-      img {
-        max-width: 50px;
-      }
+      // img {
+      //   max-width: 50px;
+      // }
     }
   }
 }

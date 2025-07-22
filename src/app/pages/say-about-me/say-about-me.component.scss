@@ -25,18 +25,27 @@
   }
 
   .quote-icon {
-    position: absolute;
-    top: 40px;
-    left: -30px;
+  position: absolute;
+  top: 40px;
+  left: 0; // ← kein negatives Offset
+  transform: translateX(-50%); // ← Icon optisch leicht nach links ziehen
+  width: 48px; // ← etwas kleiner für kleine Viewports
+  height: 48px;
+  background-image: url('/above/1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1;
+
+  @media (min-width: 768px) {
     width: 64px;
     height: 64px;
-    background-image: url('/above/1.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 1;
+    left: -30px;
+    transform: none;
   }
+}
+
 
   .carousel-mask {
     overflow: hidden;
