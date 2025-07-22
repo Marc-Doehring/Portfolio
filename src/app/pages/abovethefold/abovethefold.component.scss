@@ -1,109 +1,100 @@
 @use 'variables' as vars;
 
 :host {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   height: 100vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
   color: vars.$color-white;
   background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-
 }
 
-
+/* Zentrum: Text + Buttons */
 .content-wrapper {
-  position: relative;
-  width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100%;
   height: 100%;
+  padding: 2rem;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  
-
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  gap: 2rem;
 }
-
 
 .text-box {
-  text-align: center;
-  z-index: 2;
-  margin-top: -20rem;
-
   h2 {
     font-family: vars.$font-code;
-    font-size: 2rem;
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 300;
     margin-bottom: 0.5rem;
-    color: vars.$color-white;
     letter-spacing: 2px;
+    color: vars.$color-white;
   }
 
   h1 {
     font-weight: 700;
-    font-size: 120px;
-    margin: 0;
+    font-size: clamp(2.5rem, 10vw, 7.5rem);
     line-height: 1.2;
+    margin: 0;
   }
 }
 
-
 .button-group {
-  margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
-
-.left-scroll {
+/* Sidebars */
+.left-scroll,
+.right-sidebar {
   position: absolute;
-  bottom: 10rem;
-  left: 2rem;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 2rem;
   z-index: 2;
-
-  .scroll-button {
-    border: 1px solid vars.$color-accent;
-    border-radius: 100px;
-    padding: 8px 12px;
-    font-size: 1.5rem;
-    color: vars.$color-accent;
-    animation: bounce 2s infinite;
-  }
 
   .line {
     width: 1px;
-    height: 250px; 
-    background-color: vars.$color-accent;
-    margin-top: 2rem;
+    height: 200px;
+    margin-top: 1rem;
   }
 }
 
+.left-scroll {
+  left: 1.5rem;
+
+  .scroll-icon {
+    width: 28px;
+    height: auto;
+    animation: bounce 2s infinite ease-in-out;
+  }
+
+  .line {
+    background-color: vars.$color-accent;
+  }
+}
 
 .right-sidebar {
-  position: absolute;
-  bottom: 10rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  right: 1.5rem;
   gap: 1rem;
-  z-index: 2;
-  
 
   .email {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 1rem;
-   color: vars.$color-white;
+    color: vars.$color-white;
   }
 
   .icon-group {
@@ -112,29 +103,25 @@
     gap: 1rem;
     width: 30px;
 
- 
     .icon-link {
       position: relative;
-      display: inline-block;
-      color: vars.$color-accent; 
+      color: vars.$color-accent;
       transition: color 0.3s ease;
 
       svg {
-        fill: currentColor; 
+        fill: currentColor;
         transition: fill 0.3s ease;
       }
 
-   
       &:hover {
         color: vars.$color-white;
       }
 
-     
       &::after {
         content: '';
         position: absolute;
         top: 50%;
-        right: -12px; 
+        right: -12px;
         transform: translateY(-50%);
         width: 6px;
         height: 6px;
@@ -142,16 +129,13 @@
         border-radius: 50%;
         opacity: 0;
         transition: opacity 0.3s ease;
-        pointer-events: none; 
       }
 
-      /* Punkt sichtbar beim Hover */
       &:hover::after {
         opacity: 1;
       }
     }
 
-   
     img {
       width: 20px;
       height: 20px;
@@ -166,27 +150,23 @@
   }
 
   .line {
-    width: 1px;
-    height: 250px; 
     background-color: vars.$color-white;
-    margin-top: 1rem;
   }
 }
 
-/* Lauftext unten */
+/* Marquee */
 .marquee {
   position: absolute;
-  bottom: 150px;
+  bottom: 0;
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-  white-space: nowrap;
   backdrop-filter: blur(5px);
+  white-space: nowrap;
+  overflow: hidden;
   z-index: 500;
-  transform: rotate(-3deg) translateX(20px) translateY(-10px);
+  transform: rotate(-2deg) translateY(2px);
   transform-origin: left bottom;
-  will-change: transform;
 
   p {
     display: inline-block;
@@ -196,7 +176,6 @@
     font-size: 1rem;
     animation: scroll-left 20s linear infinite;
 
-  
     .green-dot {
       display: inline-block;
       width: 8px;
@@ -209,6 +188,15 @@
   }
 }
 
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
 
 @keyframes scroll-left {
   0% {
@@ -219,93 +207,57 @@
   }
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-}
-
-
-@media (max-width: 1440px) {
-
-  .left-scroll {
-    bottom: 20rem;
-    left: 1.5rem;
-  }
-
- 
-  .right-sidebar {
-    right: 1.5rem;
-    top: 52%;
-  }
-
-  
-  .marquee {
-    bottom: 120px;
-  }
-}
-
+/* Media Queries */
 @media (max-width: 1024px) {
-  .left-scroll {
-    bottom: 15rem;
-    left: 1.2rem;
+  .left-scroll, .right-sidebar {
+    padding-bottom: 1.5rem;
+
+    .line {
+      height: 160px;
+    }
   }
 
-  .right-sidebar {
-    right: 1.2rem;
-    top: 50%;
-  }
-
-  .marquee {
-    bottom: 100px;
-  }
-
-  .text-box h1 {
-    font-size: 90px;
+  .right-sidebar .email {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 768px) {
-  .left-scroll {
-    bottom: 12rem;
-    left: 1rem;
+  .left-scroll, .right-sidebar {
+    padding-bottom: 1rem;
+
+    .line {
+      height: 120px;
+    }
   }
 
-  .right-sidebar {
-    right: 1rem;
-    top: 48%;
+  .button-group {
+    gap: 1rem;
   }
 
   .marquee {
-    bottom: 80px;
-  }
-
-  .text-box h1 {
-    font-size: 70px;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
-  .left-scroll {
-    bottom: 10rem;
-    left: 0.8rem;
+  .left-scroll, .right-sidebar {
+    padding-bottom: 0.5rem;
+
+    .line {
+      height: 100px;
+    }
   }
 
-  .right-sidebar {
-    right: 0.8rem;
-    top: 45%;
-  }
-
-  .marquee {
-    bottom: 60px;
-    transform: rotate(-3deg) translateX(10px) translateY(-5px);
+  .text-box h2 {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   }
 
   .text-box h1 {
-    font-size: 50px;
+    font-size: clamp(2rem, 10vw, 3.5rem);
   }
-  
+
+  .button-group {
+    gap: 0.75rem;
+  }
 }
