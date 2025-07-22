@@ -10,24 +10,24 @@ $muted-text: #c2c2c2;
   backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
   overflow-y: auto;
 }
 
 .modal-content {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
   background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
   border-radius: 30px;
-  border: 1px solid rgba(61, 207, 182, 1);
-  padding: 3rem;
-  color: $light-text;
-  display: flex;
-  flex-direction: row;
-  transition: all 0.3s ease-in-out;
+  border: 1px solid $green;
+  padding: 2rem 3rem;
+  position: relative;
+  gap: 2rem;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -37,131 +37,131 @@ $muted-text: #c2c2c2;
 
 .modal-left {
   flex: 1;
-  padding-right: 2rem;
+  min-width: 0;
+
+  .project-id {
+    font-size: 2rem;
+    color: $green;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin: 0 0 1rem 0;
+    color: $light-text;
+  }
 
   h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: $green;
-    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $muted-text;
   }
 
   p {
-    font-size: 1.5rem;
-    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: $light-text;
     line-height: 1.6;
-    
+    margin-bottom: 1.5rem;
   }
 
-  .stack {
-    font-style: italic;
-    color: $green;
-    margin-top: 1rem;
+  .tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .custom-button {
+      border: 2px solid $light-text;
+      color: $light-text;
+      background: transparent;
+      border-radius: 50px;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .arrow {
+        font-size: 1.2rem;
+        color: $green;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        border-color: $green;
+        color: $green;
+
+        .arrow {
+          transform: translateX(5px);
+        }
+      }
+    }
   }
 }
 
 .modal-right {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 1rem;
 
   img {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba($green, 0.2);
+    object-fit: contain;
+  }
+
+  .modal-next {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: $green;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+
+    .arrow {
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .arrow {
+      transform: translateX(5px);
+    }
   }
 }
 
 .close-btn {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: transparent;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
   border: none;
   font-size: 2rem;
   color: $light-text;
   cursor: pointer;
+  z-index: 10;
 
   &:hover {
     color: $green;
   }
 }
-
-.modal-next {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 30rem;
-  cursor: pointer;
-  color: $green;
-  font-size: 1.2rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-
-  .arrow {
-    display: inline-block;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    color: lighten($green, 10%);
-
-    .arrow {
-      transform: translateX(8px);
-    }
-  }
-  
-}
-
-.action-buttons {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-
-  .custom-button {
-    font-family: 'Karla', sans-serif;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid $light-text;
-    border-radius: 9999px;
-    background: transparent;
-    color: $light-text;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    overflow: hidden;
-
-    .arrow {
-      color: $green;
-      font-size: 1.1rem;
-      transition: transform 0.3s ease;
-    }
-
-    &:hover {
-      border-color: $green;
-      color: $green;
-
-      .arrow {
-        color: $green;
-        transform: translate(4px, -2px) rotate(10deg);
-      }
-    }
-  }
-}
-
-.project-id {
-  font-size: 48px !important; 
-  color: #3DCFB6;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-

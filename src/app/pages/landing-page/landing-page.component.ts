@@ -5,6 +5,7 @@ import { MyskillsComponent } from '../myskills/myskills.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ContactFormComponent } from '../contactform/contactform.component';
 import { SayAboutMeComponent } from '../say-about-me/say-about-me.component';
+import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-landing-page',

@@ -9,11 +9,13 @@
   position: relative;
   overflow: hidden;
   color: vars.$color-white;
+  background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
 }
 
-/* Content-Wrapper auf zentrierte Max-Breite */
+
 .content-wrapper {
-  position: relative; // wichtig für die absoluten Sidebars
+  position: relative;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -22,9 +24,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
+
 }
 
-/* Zentrale Textbox */
+
 .text-box {
   text-align: center;
   z-index: 2;
@@ -47,7 +51,7 @@
   }
 }
 
-/* Buttons */
+
 .button-group {
   margin-top: 2rem;
   display: flex;
@@ -56,7 +60,7 @@
   flex-wrap: wrap;
 }
 
-/* Linke Seite: Scroll-Pfeil + Linie */
+
 .left-scroll {
   position: absolute;
   bottom: 10rem;
@@ -77,16 +81,16 @@
 
   .line {
     width: 1px;
-    height: 250px; /* Höhe anpassen */
+    height: 250px; 
     background-color: vars.$color-accent;
     margin-top: 2rem;
   }
 }
 
-/* Rechte Seite: Icons, E-Mail & Linie */
+
 .right-sidebar {
   position: absolute;
-  bottom: 10rem; /* statt top + transform */
+  bottom: 10rem;
   right: 2rem;
   display: flex;
   flex-direction: column;
@@ -108,29 +112,29 @@
     gap: 1rem;
     width: 30px;
 
-    /* Icon-Link mit grünem Standardfarbton */
+ 
     .icon-link {
       position: relative;
       display: inline-block;
-      color: vars.$color-accent; /* Grüner Icon-Farbton */
+      color: vars.$color-accent; 
       transition: color 0.3s ease;
 
       svg {
-        fill: currentColor; /* SVG übernimmt Textfarbe */
+        fill: currentColor; 
         transition: fill 0.3s ease;
       }
 
-      /* Hover: Icon wird weiß */
+   
       &:hover {
         color: vars.$color-white;
       }
 
-      /* Grüner Punkt rechts neben Icon - standard unsichtbar */
+     
       &::after {
         content: '';
         position: absolute;
         top: 50%;
-        right: -12px; /* Abstand vom Icon */
+        right: -12px; 
         transform: translateY(-50%);
         width: 6px;
         height: 6px;
@@ -138,7 +142,7 @@
         border-radius: 50%;
         opacity: 0;
         transition: opacity 0.3s ease;
-        pointer-events: none; /* Hover nicht blockieren */
+        pointer-events: none; 
       }
 
       /* Punkt sichtbar beim Hover */
@@ -147,7 +151,7 @@
       }
     }
 
-    /* Falls du img statt svg benutzt */
+   
     img {
       width: 20px;
       height: 20px;
@@ -163,7 +167,7 @@
 
   .line {
     width: 1px;
-    height: 250px; /* gleiche Höhe wie links */
+    height: 250px; 
     background-color: vars.$color-white;
     margin-top: 1rem;
   }
@@ -192,7 +196,7 @@
     font-size: 1rem;
     animation: scroll-left 20s linear infinite;
 
-    /* Grüner Punkt zwischen den Textteilen */
+  
     .green-dot {
       display: inline-block;
       width: 8px;
@@ -205,7 +209,7 @@
   }
 }
 
-/* Animation: Scrollt den Text von rechts nach links */
+
 @keyframes scroll-left {
   0% {
     transform: translateX(100%);
@@ -224,21 +228,21 @@
   }
 }
 
-/* --- RESPONSIVE ANPASSUNGEN --- */
+
 @media (max-width: 1440px) {
-  /* Linke Leiste etwas näher an unteren Rand */
+
   .left-scroll {
     bottom: 20rem;
     left: 1.5rem;
   }
 
-  /* Rechte Sidebar etwas näher an Mitte */
+ 
   .right-sidebar {
     right: 1.5rem;
     top: 52%;
   }
 
-  /* Lauftext etwas nach oben */
+  
   .marquee {
     bottom: 120px;
   }
@@ -303,4 +307,5 @@
   .text-box h1 {
     font-size: 50px;
   }
+  
 }

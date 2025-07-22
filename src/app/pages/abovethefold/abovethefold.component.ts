@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-abovethefold',
-  standalone: true, // <--- wichtig
-  imports: [], // falls du später ngIf, RouterLink etc. brauchst: CommonModule & RouterModule
+  standalone: true, 
+  imports: [], 
   templateUrl: './abovethefold.component.html',
-  styleUrls: ['./abovethefold.component.scss'] // <--- Achtung: styleUrls (Plural!)
+  styleUrls: ['./abovethefold.component.scss'] 
 })
 export class AbovethefoldComponent {}
 
