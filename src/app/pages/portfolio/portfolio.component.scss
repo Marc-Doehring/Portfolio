@@ -31,9 +31,22 @@
       font-family: vars.$font-code;
     }
 
+    .green {
+      // h2 Überschrift
+      font-size: 3rem;
+      font-weight: bold;
+      font-family: vars.$font-code;
+    }
+
     p {
       max-width: 600px;
       color: vars.$color-white;
+    }
+
+    @media (max-width: 345px) {
+      .green {
+        font-size: 2rem; // kleiner bei kleinen Bildschirmen
+      }
     }
   }
 
@@ -93,7 +106,6 @@
             margin: 0;
             color: vars.$color-white;
             font-family: vars.$font-body;
-            font-size: 0.9rem;
             white-space: nowrap;
 
             .stack-divider {
@@ -101,6 +113,23 @@
               margin: 0 0.4rem;
             }
           }
+        }
+
+        // Ab 360px das project-line etwas kleiner
+        @media (max-width: 360px) {
+          .project-line {
+            font-size: 0.85rem; // Schriftgröße etwas kleiner
+          }
+
+          .project-line h3 {
+            font-size: 1.1rem;
+          }
+
+          .project-line h3 .arrow {
+            font-size: 1rem;
+          }
+
+          
         }
       }
 
@@ -117,6 +146,44 @@
 
         .stack {
           margin-top: 0.25rem;
+        }
+      }
+
+      @media (max-width: 390px) {
+        .stack {
+          padding: 20px;
+          font-size: 0.7rem;
+
+          h3 {
+            font-size: 1.1rem;
+
+            .arrow {
+              font-size: 1rem;
+            }
+          }
+
+          .stack {
+            font-size: 0.7rem;
+          }
+        }
+      }
+
+      @media (max-width: 345px) {
+        .stack {
+          padding: 20px;
+          font-size: 0.6rem;
+
+          h3 {
+            font-size: 1.1rem;
+
+            .arrow {
+              font-size: 1rem;
+            }
+          }
+
+          .stack {
+            font-size: 0.6rem;
+          }
         }
       }
     }
