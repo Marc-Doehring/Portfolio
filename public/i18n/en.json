@@ -80,6 +80,24 @@
   "LIVE": "Live Test",
   "GITHUB": "GitHub",
   "NEXT_PROJECT": "Next project"
+},
+"PRIVACY": {
+  "TITLE": "Privacy Policy",
+  "INTRO": "We are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information.",
+  "SECTION1_TITLE": "1. Data Collection",
+  "SECTION1_TEXT": "We only collect personal data that you voluntarily provide through our contact form, including your name, email address, and message content.",
+  "SECTION2_TITLE": "2. Purpose of Data Use",
+  "SECTION2_TEXT": "Your data is used solely to respond to your inquiries and to provide the services you request. We do not sell or share your data with third parties.",
+  "SECTION3_TITLE": "3. Data Storage",
+  "SECTION3_TEXT": "All submitted information is stored securely and deleted once it is no longer needed for its intended purpose.",
+  "SECTION4_TITLE": "4. Cookies",
+  "SECTION4_TEXT": "Our website does not use cookies or tracking tools. Your visit is anonymous and is not monitored.",
+  "SECTION5_TITLE": "5. Your Rights",
+  "SECTION5_TEXT": "You have the right to request access to your stored data, to correct or delete it, and to withdraw your consent at any time. To do so, please contact us directly.",
+  "SECTION6_TITLE": "6. Contact",
+  "SECTION6_TEXT": "If you have any questions about this privacy policy or your data, please reach out via our contact form or send us an email at ",
+  "SECTION7_TITLE": "7. Updates",
+  "SECTION7_TEXT": "We reserve the right to update this privacy policy to comply with legal requirements or improve clarity. The most recent version will always be published on this page."
 }
 }
   

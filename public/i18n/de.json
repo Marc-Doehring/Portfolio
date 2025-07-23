@@ -80,6 +80,24 @@
   "LIVE": "Live-Demo",
   "GITHUB": "GitHub",
   "NEXT_PROJECT": "Nächstes Projekt"
+},
+"PRIVACY": {
+  "TITLE": "Datenschutzerklärung",
+  "INTRO": "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung erläutert, wie wir Ihre Informationen erfassen, verwenden und schützen.",
+  "SECTION1_TITLE": "1. Datenerfassung",
+  "SECTION1_TEXT": "Wir erfassen nur personenbezogene Daten, die Sie uns freiwillig über das Kontaktformular mitteilen, einschließlich Ihres Namens, Ihrer E-Mail-Adresse und Ihrer Nachricht.",
+  "SECTION2_TITLE": "2. Zweck der Datennutzung",
+  "SECTION2_TEXT": "Ihre Daten werden ausschließlich verwendet, um Ihre Anfragen zu beantworten und die von Ihnen gewünschten Leistungen zu erbringen. Eine Weitergabe oder ein Verkauf an Dritte erfolgt nicht.",
+  "SECTION3_TITLE": "3. Datenspeicherung",
+  "SECTION3_TEXT": "Alle übermittelten Informationen werden sicher gespeichert und gelöscht, sobald sie für den vorgesehenen Zweck nicht mehr benötigt werden.",
+  "SECTION4_TITLE": "4. Cookies",
+  "SECTION4_TEXT": "Unsere Website verwendet keine Cookies oder Tracking-Tools. Ihr Besuch erfolgt anonym und wird nicht nachverfolgt.",
+  "SECTION5_TITLE": "5. Ihre Rechte",
+  "SECTION5_TEXT": "Sie haben das Recht, Auskunft über Ihre gespeicherten Daten zu erhalten, diese zu korrigieren oder löschen zu lassen und Ihre Einwilligung jederzeit zu widerrufen. Bitte kontaktieren Sie uns dafür direkt.",
+  "SECTION6_TITLE": "6. Kontakt",
+  "SECTION6_TEXT": "Wenn Sie Fragen zu dieser Datenschutzerklärung oder zu Ihren Daten haben, kontaktieren Sie uns über das Kontaktformular oder schreiben Sie uns eine E-Mail an ",
+  "SECTION7_TITLE": "7. Änderungen",
+  "SECTION7_TEXT": "Wir behalten uns das Recht vor, diese Datenschutzerklärung anzupassen, um gesetzlichen Anforderungen zu entsprechen oder mehr Klarheit zu schaffen. Die jeweils aktuelle Version wird auf dieser Seite veröffentlicht."
 }
 }
 

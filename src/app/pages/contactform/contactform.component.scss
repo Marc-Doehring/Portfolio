@@ -85,30 +85,36 @@
         }
 
         .privacy-checkbox {
-          display: flex;
-          align-items: flex-start;
-          font-family: vars.$font-body;
-          font-size: 0.9rem;
-          color: vars.$color-white;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
 
-          input[type="checkbox"] {
-            margin-right: 0.5rem;
-            margin-top: 0.3rem;
-            accent-color: vars.$color-accent;
-            border: 2px solid vars.$color-accent;
-            width: 16px;
-            height: 16px;
-          }
+  input[type="checkbox"] {
+    margin-top: 0.3rem;
+    accent-color: vars.$color-accent;
+    width: 16px;
+    height: 16px;
+  }
 
-          a {
-            color: vars.$color-accent;
-            text-decoration: underline;
+  .privacy-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    color: vars.$color-white;
 
-            &:hover {
-              text-decoration: none;
-            }
-          }
-        }
+    .privacy-link {
+      color: vars.$color-accent;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 
         .submit-btn {
           border: 2px solid vars.$color-white;

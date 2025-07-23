@@ -11,28 +11,34 @@
     <div class="contact-form-wrapper">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
 
-        <hr class="divider" /> 
+        <hr class="divider" />
         <label for="name" class="section-title">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
         <input id="name" type="text" formControlName="name" [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate" />
         <hr class="divider" />
 
         <label for="email" class="section-title">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
-        <input id="email" type="email" formControlName="email" [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate" />
+        <input id="email" type="email" formControlName="email"
+          [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate" />
         <hr class="divider" />
 
         <label for="message" class="section-title">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
-        <textarea id="message" formControlName="message" rows="5" [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"></textarea>
+        <textarea id="message" formControlName="message" rows="5"
+          [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"></textarea>
         <hr class="divider" />
 
         <div class="privacy-checkbox">
           <input type="checkbox" id="privacy" formControlName="privacy" />
-          <label for="privacy">
-            {{ 'CONTACT.PRIVACY_TEXT' | translate }}
-            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+
+          <div class="privacy-label">
+            <label for="privacy">
+              {{ 'CONTACT.PRIVACY_TEXT' | translate }}
+            </label>
+            <a routerLink="/privacy-policy" class="privacy-link">
               {{ 'CONTACT.PRIVACY_LINK' | translate }}
             </a>
-          </label>
+          </div>
         </div>
+
 
         <button type="submit" class="submit-btn" [disabled]="!contactForm.valid">
           {{ 'CONTACT.SUBMIT_BUTTON' | translate }}

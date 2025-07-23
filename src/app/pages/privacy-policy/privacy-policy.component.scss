@@ -1,0 +1,58 @@
+@use '/variables' as vars;
+
+.privacy-section {
+  padding: 7rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: vars.$font-body;
+  color: vars.$color-white;
+  line-height: 1.6;
+
+  h1, h2 {
+    color: vars.$color-accent;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid vars.$color-accent;
+    padding-bottom: 0.4rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  a {
+    color: vars.$color-accent;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    padding: 2rem 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
