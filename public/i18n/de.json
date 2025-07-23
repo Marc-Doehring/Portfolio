@@ -4,11 +4,85 @@
     "SUBHEAD": "Marc Döhring",
     "CHECK_WORK": "Meine Arbeiten",
     "CONTACT": "Kontakt",
-    "MARQUEE": "Frontend Entwickler <span class='green-dot'></span> mit Sitz in Duisburg <span class='green-dot'></span> verfügbar für Jobs <span class='green-dot'></span> offen für Remote-Arbeit"
+    "MARQUEE_PART1": "Frontend Entwickler",
+    "MARQUEE_PART2": "mit Sitz in Duisburg",
+    "MARQUEE_PART3": "verfügbar für Jobs",
+    "MARQUEE_PART4": "offen für Remote-Arbeit"
   },
   "NAV": {
     "ABOUT_ME": "Über mich",
     "SKILLS": "Fähigkeiten",
     "PROJECTS": "Projekte"
-  }
+  },
+  "ABOUT": {
+    "TITLE": "Wer ich bin",
+    "INTRO": "Hi, ich bin Marc. Ich liebe es, Ideen in interaktive digitale Erlebnisse zu verwandeln. Programmieren gibt mir die Freiheit zu gestalten, zu entdecken und mich ständig weiterzuentwickeln – Zeile für Zeile.",
+    "LOCATION": "Ich lebe in Duisburg. Hier arbeite ich an persönlichen und gemeinsamen Projekten, die mich täglich fordern und wachsen lassen.",
+    "OPEN_MINDED": "Ich bin offen für Neues und begeistert davon, moderne Technologien zu lernen. Ob neues Framework, Designtrend oder Performance-Optimierung – ich bin immer neugierig und motiviert, meine Fähigkeiten zu verbessern.",
+    "PROBLEM_SOLVER": "Problemlösung ist meine Stärke. Herausforderungen begegne ich mit Kreativität, Ausdauer und Teamgeist. Ich glaube, gute Lösungen entstehen durch kluge Fragen und mutiges Lernen aus Fehlern."
+  },
+  "SKILLS": {
+    "CATEGORY": "Technologien",
+    "TITLE": "Fähigkeiten",
+    "DESCRIPTION": {
+      "PART1": "Ich habe Erfahrung mit einer Vielzahl von Frontend-Technologien, darunter HTML, CSS, JavaScript sowie Frameworks wie Angular und Bootstrap. Ich entwickle gerne responsive, benutzerfreundliche Oberflächen, die sauberen Code mit durchdachtem Design verbinden.",
+      "PART2": "Ich bin immer offen dafür, neue Tools und Ansätze zu lernen – sei es ein modernes Framework, ein neuer Build-Prozess oder Best Practices im UX-Bereich. Für mich ist es nicht nur wichtig, mit der schnellen Entwicklung des Webs Schritt zu halten – es ist unerlässlich. Veränderung ist für mich eine Chance, mit jedem Projekt zu wachsen und mich zu verbessern."
+    },
+    "REQUEST": {
+      "TITLE": "Du brauchst",
+      "HIGHLIGHT": "eine andere Fähigkeit?",
+      "TEXT": "Melde dich gerne bei mir.",
+      "BUTTON": "Lass uns sprechen"
+    }
+  },
+  "PORTFOLIO": {
+    "SECTION_LABEL": "Portfolio",
+    "TITLE": "Ausgewählte Projekte",
+    "DESCRIPTION": "Entdecke hier eine Auswahl meiner Arbeiten – interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
+  },
+  "CONTACT": {
+    "TITLE": "Kontakt aufnehmen",
+    "DESCRIPTION": "Wenn du zusammenarbeiten möchtest oder Fragen hast, melde dich gerne!",
+    "NAME_LABEL": "Wie heißt du?",
+    "NAME_PLACEHOLDER": "Dein Name hier",
+    "EMAIL_LABEL": "Wie lautet deine E-Mail-Adresse?",
+    "EMAIL_PLACEHOLDER": "du@email.de",
+    "MESSAGE_LABEL": "Wobei kann ich dir helfen?",
+    "MESSAGE_PLACEHOLDER": "Hallo Marc, ich interessiere mich für...",
+    "PRIVACY_TEXT": "Ich habe die",
+    "PRIVACY_LINK": "Datenschutzerklärung gelesen",
+    "SUBMIT_BUTTON": "Sag Hallo ;)"
+  },
+  "FOOTER": {
+    "ROLE": "Webentwickler",
+    "LOCATION": "Duisburg, Deutschland",
+    "EMAIL": "E-Mail",
+    "LEGAL": "Impressum"
+  },
+  "LEGAL": {
+    "TITLE": "Impressum",
+    "INFO_TITLE": "Angaben gemäß § 5 TMG",
+    "CITY": "Duisburg, Deutschland",
+    "CONTACT_TITLE": "Kontakt",
+    "EMAIL": "E-Mail",
+    "RESPONSIBLE_TITLE": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+    "DISCLAIMER_TITLE": "Haftungsausschluss",
+    "DISCLAIMER_TEXT": "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen.",
+    "LINKS_TITLE": "Haftung für Links",
+    "LINKS_TEXT": "Diese Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+    "COPYRIGHT_TITLE": "Urheberrecht",
+    "COPYRIGHT_TEXT": "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+  },
+  "ABOUT_ME": {
+    "WHAT_OTHERS_SAY": "Was Andere Sagen"
+  },
+  "MODAL": {
+  "LIVE": "Live-Demo",
+  "GITHUB": "GitHub",
+  "NEXT_PROJECT": "Nächstes Projekt"
 }
+}
+
+
+
+

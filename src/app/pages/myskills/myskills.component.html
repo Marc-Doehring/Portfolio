@@ -1,34 +1,30 @@
-
 <section id="myskills" class="myskills-section">
   <div class="content-wrapper">
     <div class="myskills-wrapper">
 
       <!-- Linker Bereich mit Titel + Kasten -->
       <div class="skills-left-column">
-        <h3 class="section-label">Technologies</h3>
+        <h3 class="section-label">{{ 'SKILLS.CATEGORY' | translate }}</h3>
 
         <div class="skills-left">
-          <h2 class="section-title">Skill Set</h2>
+          <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
+
           <p class="section-subtitle">
-            I have experience working with a range of front-end technologies, including HTML, CSS, JavaScript, and
-            frameworks like Angular and Bootstrap. I enjoy building responsive, user-friendly interfaces that combine
-            clean code with strong design principles.
-            <br><br>
-            I’m always open to learning new tools and approaches — whether it’s a modern framework, a new build process,
-            or best practices in UX. For me, staying up to date with the rapid evolution of web development isn’t just
-            important — it’s essential. I see change as an opportunity to grow and improve with every project.
+            {{ 'SKILLS.DESCRIPTION.PART1' | translate }}<br><br>
+            {{ 'SKILLS.DESCRIPTION.PART2' | translate }}
           </p>
 
           <div class="skill-request-box">
-            <h3>You need <span class="highlight-green">another skill?</span></h3>
-            <p>Feel free to contact me.</p>
+            <h3>{{ 'SKILLS.REQUEST.TITLE' | translate }} <span class="highlight-green">{{ 'SKILLS.REQUEST.HIGHLIGHT' |
+                translate }}</span></h3>
+            <p>{{ 'SKILLS.REQUEST.TEXT' | translate }}</p>
             <a class="ghost-button" href="#contact">
-              <span>Let’s Talk</span>
+              <span>{{ 'SKILLS.REQUEST.BUTTON' | translate }}</span>
             </a>
-
           </div>
         </div>
       </div>
+
 
       <!-- Rechter Bereich mit Logos -->
       <div class="skills-right">

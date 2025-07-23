@@ -56,7 +56,15 @@
 
   <!-- Lauftext-Banner -->
 <div class="marquee">
-  <p [innerHTML]="'HOME.MARQUEE' | translate"></p>
+  <p>
+    {{ 'HOME.MARQUEE_PART1' | translate }}
+    <span class="green-dot"></span>
+    {{ 'HOME.MARQUEE_PART2' | translate }}
+    <span class="green-dot"></span>
+    {{ 'HOME.MARQUEE_PART3' | translate }}
+    <span class="green-dot"></span>
+    {{ 'HOME.MARQUEE_PART4' | translate }}
+  </p>
 </div>
 
 </section>

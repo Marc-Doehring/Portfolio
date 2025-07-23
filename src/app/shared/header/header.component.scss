@@ -35,7 +35,6 @@
     position: relative;
     width: 80px;
     height: 30px;
-    
     border: 1px solid vars.$color-accent;
     border-radius: 999px;
     display: flex;
@@ -44,39 +43,39 @@
     padding: 0 12px;
     cursor: pointer;
     font-family: sans-serif;
-  }
 
-  .language-toggle .lang {
-    z-index: 1;
-    flex: 1;
-    text-align: center;
-    color: vars.$color-accent;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
+    .lang {
+      z-index: 1;
+      flex: 1;
+      text-align: center;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      cursor: pointer;
 
-  .language-toggle .toggle-slider {
-    position: absolute;
-    top: 2px;
-    bottom: 2px;
-    left: 2px;
-    width: 48%;
-    background-color: vars.$color-accent;
-    border-radius: 999px;
-    transition: left 0.3s ease;
-    z-index: 0;
-  }
+      &.active {
+        color: vars.$color-white;
+      }
 
-  .language-toggle.active .toggle-slider {
-    left: 50%;
-  }
+      &:not(.active) {
+        color: vars.$color-accent;
+      }
+    }
 
-  .language-toggle.active .de {
-    color: vars.$color-white;
-  }
+    .toggle-slider {
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      left: 2px;
+      width: 48%;
+      background-color: vars.$color-accent;
+      border-radius: 999px;
+      transition: transform 0.3s ease;
+      z-index: 0;
 
-  .language-toggle:not(.active) .en {
-    color: vars.$color-white;
+      &.right {
+        transform: translateX(100%);
+      }
+    }
   }
 
   button {
@@ -163,38 +162,36 @@
       background-color: vars.$color-white;
       display: block;
       transition: all 0.3s ease;
-      
     }
   }
 
   .mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0.6) 84%);
-  color: vars.$color-white;
-  padding: 0rem 1.2rem; // ⬅️ Weniger Padding
-  position: absolute;
-  right: 1rem; // ⬅️ kleiner Abstand zum Rand
-  z-index: 100;
-  border-radius: 12px; // ⬅️ etwas kleiner
-
-  a {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0.6) 84%);
     color: vars.$color-white;
-    text-decoration: none;
-    padding: 0.7rem 0; // ⬅️ etwas schmaler
-    font-weight: 500;
-    font-size: 0.9rem; // ⬅️ optional etwas kleiner
-  }
+    padding: 0rem 1.2rem;
+    position: absolute;
+    right: 1rem;
+    z-index: 100;
+    border-radius: 12px;
 
-  &.open {
-    display: flex;
-  }
+    a {
+      color: vars.$color-white;
+      text-decoration: none;
+      padding: 0.7rem 0;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
 
-  // Optional: letzte Zeile ohne Border
-  a:last-child {
-    border-bottom: none;
+    &.open {
+      display: flex;
+    }
+
+    a:last-child {
+      border-bottom: none;
+    }
   }
-}
 
   @media (max-width: 768px) {
     .header-container {
@@ -222,7 +219,6 @@
 }
 
 .language-toggle.mobile-toggle {
-  
   display: flex;
   justify-content: center;
   align-items: center;

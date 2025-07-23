@@ -1,41 +1,35 @@
 <app-header></app-header>
+
 <section id="legal-notice" class="legal-notice-section">
   <div class="content-wrapper">
-    <h1 class="legal-title">Legal Notice</h1>
+    <h1 class="legal-title">{{ 'LEGAL.TITLE' | translate }}</h1>
 
-    <p><strong>Information according to § 5 TMG</strong></p>
+    <p><strong>{{ 'LEGAL.INFO_TITLE' | translate }}</strong></p>
     <p>
       Marc Döhring<br>
-      Duisburg, Germany
+      {{ 'LEGAL.CITY' | translate }}
     </p>
 
-    <p><strong>Contact</strong></p>
+    <p><strong>{{ 'LEGAL.CONTACT_TITLE' | translate }}</strong></p>
     <p>
-      Email: <a href="mailto:email&#64;beispiel.de">email&#64;beispiel.de</a>
+      {{ 'LEGAL.EMAIL' | translate }}: <a href="mailto:email&#64;beispiel.de">email&#64;beispiel.de</a><br>
       LinkedIn: <a href="https://linkedin.com/in/deinprofil" target="_blank" rel="noopener">linkedin.com/in/deinprofil</a><br>
       GitHub: <a href="https://github.com/deinprofil" target="_blank" rel="noopener">github.com/deinprofil</a>
     </p>
 
-    <p><strong>Responsible for content according to § 55 Abs. 2 RStV:</strong></p>
+    <p><strong>{{ 'LEGAL.RESPONSIBLE_TITLE' | translate }}</strong></p>
     <p>
       Marc Döhring<br>
-      Duisburg, Germany
+      {{ 'LEGAL.CITY' | translate }}
     </p>
 
-    <p><strong>Disclaimer</strong></p>
-    <p>
-      The content of this website was created with great care. However, I cannot guarantee the accuracy, completeness, or timeliness of the content.
-    </p>
+    <p><strong>{{ 'LEGAL.DISCLAIMER_TITLE' | translate }}</strong></p>
+    <p>{{ 'LEGAL.DISCLAIMER_TEXT' | translate }}</p>
 
-    <p><strong>Liability for Links</strong></p>
-    <p>
-      This website contains links to external websites of third parties. I have no influence over the content of those websites. The respective provider or operator of the sites is always responsible for the content of the linked sites.
-    </p>
+    <p><strong>{{ 'LEGAL.LINKS_TITLE' | translate }}</strong></p>
+    <p>{{ 'LEGAL.LINKS_TEXT' | translate }}</p>
 
-    <p><strong>Copyright</strong></p>
-    <p>
-      All content and works created by the site operator are subject to German copyright law. Any duplication, processing, distribution, or any kind of use beyond the scope of copyright law requires the written consent of the respective author or creator.
-    </p>
+    <p><strong>{{ 'LEGAL.COPYRIGHT_TITLE' | translate }}</strong></p>
+    <p>{{ 'LEGAL.COPYRIGHT_TEXT' | translate }}</p>
   </div>
 </section>
-

@@ -1,29 +1,35 @@
 <header>
   <div class="header-container content-wrapper">
     <div class="nav-left">
-      <div class="language-toggle" [class.active]="currentLang === 'de'" (click)="toggleLanguage()">
-        <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
-        <span class="lang de" [class.active]="currentLang === 'de'">DE</span>
-        <div class="toggle-slider"></div>
-      </div>
+      <div class="language-toggle">
+  <span
+    class="lang en"
+    [class.active]="currentLang === 'en'"
+    (click)="setLang('en')"
+  >
+    EN
+  </span>
+  <span
+    class="lang de"
+    [class.active]="currentLang === 'de'"
+    (click)="setLang('de')"
+  >
+    DE
+  </span>
+  <div class="toggle-slider" [class.right]="currentLang === 'de'"></div>
+</div>
 
       <nav class="nav-links desktop-nav">
-  <a href="#aboutme"
-     [class.active]="currentSection === 'aboutme'"
-     (click)="setCurrentSection('aboutme')">
-    {{ 'NAV.ABOUT_ME' | translate }}
-  </a>
-  <a href="#myskills"
-     [class.active]="currentSection === 'myskills'"
-     (click)="setCurrentSection('myskills')">
-    {{ 'NAV.SKILLS' | translate }}
-  </a>
-  <a href="#portfolio"
-     [class.active]="currentSection === 'portfolio'"
-     (click)="setCurrentSection('portfolio')">
-    {{ 'NAV.PROJECTS' | translate }}
-  </a>
-</nav>
+        <a href="#aboutme" [class.active]="currentSection === 'aboutme'" (click)="setCurrentSection('aboutme')">
+          {{ 'NAV.ABOUT_ME' | translate }}
+        </a>
+        <a href="#myskills" [class.active]="currentSection === 'myskills'" (click)="setCurrentSection('myskills')">
+          {{ 'NAV.SKILLS' | translate }}
+        </a>
+        <a href="#portfolio" [class.active]="currentSection === 'portfolio'" (click)="setCurrentSection('portfolio')">
+          {{ 'NAV.PROJECTS' | translate }}
+        </a>
+      </nav>
     </div>
 
 
@@ -47,10 +53,22 @@
     <a href="#portfolio" (click)="navigateMobile('portfolio')">{{ 'NAV.PROJECTS' | translate }}</a>>
 
 
-    <div class="language-toggle mobile-toggle" [class.active]="currentLang === 'de'" (click)="toggleLanguage()">
-      <span class="lang en" [class.active]="currentLang === 'en'">EN</span>
-      <span class="lang de" [class.active]="currentLang === 'de'">DE</span>
-      <div class="toggle-slider"></div>
-    </div>
+    <div class="language-toggle mobile-toggle">
+  <span
+    class="lang en"
+    [class.active]="currentLang === 'en'"
+    (click)="setLang('en')"
+  >
+    EN
+  </span>
+  <span
+    class="lang de"
+    [class.active]="currentLang === 'de'"
+    (click)="setLang('de')"
+  >
+    DE
+  </span>
+  <div class="toggle-slider" [class.right]="currentLang === 'de'"></div>
+</div>
   </div>
 </header>

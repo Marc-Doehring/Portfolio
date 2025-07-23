@@ -6,19 +6,19 @@
       
       <!-- Links -->
       <div class="footer-left">
-        <a routerLink="/" (click)="scrollToTop()" class="logo" aria-label="Zur Startseite">
+        <a routerLink="/" (click)="scrollToTop()" class="logo" aria-label="Go to homepage">
           <img src="/header/Unbenannt.png" alt="Marc Döhring Logo">
         </a>
-        <div class="footer-role">Web Developer</div>
-        <div class="footer-location">Duisburg, Germany</div>
+        <div class="footer-role">{{ 'FOOTER.ROLE' | translate }}</div>
+        <div class="footer-location">{{ 'FOOTER.LOCATION' | translate }}</div>
       </div>
 
       <!-- Rechts -->
       <div class="footer-right">
         <a href="https://github.com/Marc-Doehring" target="_blank" rel="noopener">Github</a>
         <a href="https://linkedin.com/in/deinprofil" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:email@beispiel.de">Email</a>
-        <a routerLink="/legal-notice">Legal Notice</a>
+        <a href="mailto:email@beispiel.de">{{ 'FOOTER.EMAIL' | translate }}</a>
+        <a routerLink="/legal-notice">{{ 'FOOTER.LEGAL' | translate }}</a>
       </div>
 
     </div>

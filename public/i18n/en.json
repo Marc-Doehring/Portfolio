@@ -4,11 +4,84 @@
     "SUBHEAD": "Marc Döhring",
     "CHECK_WORK": "Check my work",
     "CONTACT": "Contact",
-    "MARQUEE": "Frontend Developer <span class='green-dot'></span> Based in Duisburg <span class='green-dot'></span> open to work <span class='green-dot'></span> available for remote work"
+    "MARQUEE_PART1": "Frontend Developer",
+    "MARQUEE_PART2": "Based in Duisburg",
+    "MARQUEE_PART3": "open to work",
+    "MARQUEE_PART4": "available for remote work"
   },
   "NAV": {
     "ABOUT_ME": "About me",
     "SKILLS": "Skills",
     "PROJECTS": "Projects"
-  }
+  },
+  "ABOUT": {
+    "TITLE": "Who I Am",
+    "INTRO": "Hi, I’m Marc. I’m passionate about turning ideas into interactive digital experiences. Coding gives me the freedom to build, explore, and improve — one line at a time.",
+    "LOCATION": "I am based in Duisburg. Here, I work on personal and collaborative projects that challenge me to grow every day.",
+    "OPEN_MINDED": "I’m open-minded and enthusiastic about learning new technologies. Whether it’s a new framework, design trend, or performance tweak — I’m always curious and committed to sharpening my skills.",
+    "PROBLEM_SOLVER": "Problem-solving is where I thrive. I approach challenges with creativity, persistence, and a collaborative mindset. I believe great solutions come from asking the right questions and building on every failure."
+  },
+  "SKILLS": {
+    "CATEGORY": "Technologies",
+    "TITLE": "Skill Set",
+    "DESCRIPTION": {
+      "PART1": "I have experience working with a range of front-end technologies, including HTML, CSS, JavaScript, and frameworks like Angular and Bootstrap. I enjoy building responsive, user-friendly interfaces that combine clean code with strong design principles.",
+      "PART2": "I’m always open to learning new tools and approaches — whether it’s a modern framework, a new build process, or best practices in UX. For me, staying up to date with the rapid evolution of web development isn’t just important — it’s essential. I see change as an opportunity to grow and improve with every project."
+    },
+    "REQUEST": {
+      "TITLE": "You need",
+      "HIGHLIGHT": "another skill?",
+      "TEXT": "Feel free to contact me.",
+      "BUTTON": "Let’s Talk"
+    }
+  },
+  "PORTFOLIO": {
+    "SECTION_LABEL": "Portfolio",
+    "TITLE": "Featured Projects",
+    "DESCRIPTION": "Explore a selection of my work here - Interact with projects to see my skills in action."
+  },
+  "CONTACT": {
+    "TITLE": "Get in Touch",
+    "DESCRIPTION": "If you want to collaborate or have any questions, feel free to reach out!",
+    "NAME_LABEL": "What’s your name?",
+    "NAME_PLACEHOLDER": "Your name goes here",
+    "EMAIL_LABEL": "What’s your email?",
+    "EMAIL_PLACEHOLDER": "youremail@email.com",
+    "MESSAGE_LABEL": "How can I help you?",
+    "MESSAGE_PLACEHOLDER": "Hello Marc, I am interested in...",
+    "PRIVACY_TEXT": "I’ve read the",
+    "PRIVACY_LINK": "privacy policy",
+    "SUBMIT_BUTTON": "Say Hello ;)"
+  },
+  "FOOTER": {
+    "ROLE": "Web Developer",
+    "LOCATION": "Duisburg, Germany",
+    "EMAIL": "Email",
+    "LEGAL": "Legal Notice"
+  },
+   "LEGAL": {
+    "TITLE": "Legal Notice",
+    "INFO_TITLE": "Information according to § 5 TMG",
+    "CITY": "Duisburg, Germany",
+    "CONTACT_TITLE": "Contact",
+    "EMAIL": "Email",
+    "RESPONSIBLE_TITLE": "Responsible for content according to § 55 Abs. 2 RStV",
+    "DISCLAIMER_TITLE": "Disclaimer",
+    "DISCLAIMER_TEXT": "The content of this website was created with great care. However, I cannot guarantee the accuracy, completeness, or timeliness of the content.",
+    "LINKS_TITLE": "Liability for Links",
+    "LINKS_TEXT": "This website contains links to external websites of third parties. I have no influence over the content of those websites. The respective provider or operator of the sites is always responsible for the content of the linked sites.",
+    "COPYRIGHT_TITLE": "Copyright",
+    "COPYRIGHT_TEXT": "All content and works created by the site operator are subject to German copyright law. Any duplication, processing, distribution, or any kind of use beyond the scope of copyright law requires the written consent of the respective author or creator."
+  },
+  "ABOUT_ME": {
+    "WHAT_OTHERS_SAY": "What Others Say"
+  },
+  "MODAL": {
+  "LIVE": "Live Test",
+  "GITHUB": "GitHub",
+  "NEXT_PROJECT": "Next project"
 }
+}
+  
+
+  

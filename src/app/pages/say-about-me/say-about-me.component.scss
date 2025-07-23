@@ -27,9 +27,9 @@
   .quote-icon {
   position: absolute;
   top: 40px;
-  left: 0; // ← kein negatives Offset
-  transform: translateX(-50%); // ← Icon optisch leicht nach links ziehen
-  width: 48px; // ← etwas kleiner für kleine Viewports
+  left: 0; 
+  transform: translateX(-50%); 
+  width: 48px; 
   height: 48px;
   background-image: url('/above/1.png');
   background-size: contain;
