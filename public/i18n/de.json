@@ -51,7 +51,11 @@
     "MESSAGE_PLACEHOLDER": "Hallo Marc, ich interessiere mich für...",
     "PRIVACY_TEXT": "Ich habe die",
     "PRIVACY_LINK": "Datenschutzerklärung gelesen",
-    "SUBMIT_BUTTON": "Sag Hallo ;)"
+    "SUBMIT_BUTTON": "Sag Hallo ;)",
+    "NAME_ERROR": "Bitte gib deinen Namen ein (mind. 2 Zeichen).",
+    "EMAIL_ERROR": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "MESSAGE_ERROR": "Bitte gib eine Nachricht ein (mind. 10 Zeichen).",
+    "PRIVACY_ERROR": "Bitte bestätige die Datenschutzbestimmungen."
   },
   "FOOTER": {
     "ROLE": "Webentwickler",

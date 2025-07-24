@@ -18,9 +18,9 @@ export class ContactFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
+      message: ['', [Validators.required, Validators.minLength(10)]],
       privacy: [false, Validators.requiredTrue],
     });
   }
@@ -33,6 +33,13 @@ export class ContactFormComponent {
       alert('Thanks for your message!');
       this.contactForm.reset();
       this.submitted = false;
+    } else {
+      this.contactForm.markAllAsTouched(); // Zeigt Fehler an allen Feldern
     }
+  }
+
+  isInvalid(controlName: string): boolean {
+    const control = this.contactForm.get(controlName);
+    return !!(control && control.invalid && (control.dirty || control.touched || this.submitted));
   }
 }

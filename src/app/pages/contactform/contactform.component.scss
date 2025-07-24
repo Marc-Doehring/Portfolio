@@ -162,3 +162,25 @@
   box-sizing: border-box;
   min-width: 0; // wichtig für Flexbox + Responsive
 }
+
+input.invalid,
+textarea.invalid {
+  border: 1px solid #ff4d4d;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.privacy-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+
+
+

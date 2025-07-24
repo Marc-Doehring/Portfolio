@@ -7,28 +7,42 @@
       <p>{{ 'CONTACT.DESCRIPTION' | translate }}</p>
     </div>
 
-    <!-- Rechte Seite -->
+    <!-- Rechte Seite: Formular -->
     <div class="contact-form-wrapper">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
 
+        <!-- Name -->
         <hr class="divider" />
         <label for="name" class="section-title">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
-        <input id="name" type="text" formControlName="name" [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate" />
-        <hr class="divider" />
+        <input id="name" type="text" formControlName="name" [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
+               [class.invalid]="isInvalid('name')" />
+        <div class="error" *ngIf="isInvalid('name')">
+          {{ 'CONTACT.NAME_ERROR' | translate }}
+        </div>
 
+        <!-- Email -->
+        <hr class="divider" />
         <label for="email" class="section-title">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
-        <input id="email" type="email" formControlName="email"
-          [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate" />
-        <hr class="divider" />
+        <input id="email" type="email" formControlName="email" [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
+               [class.invalid]="isInvalid('email')" />
+        <div class="error" *ngIf="isInvalid('email')">
+          {{ 'CONTACT.EMAIL_ERROR' | translate }}
+        </div>
 
+        <!-- Nachricht -->
+        <hr class="divider" />
         <label for="message" class="section-title">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
         <textarea id="message" formControlName="message" rows="5"
-          [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"></textarea>
-        <hr class="divider" />
+                  [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
+                  [class.invalid]="isInvalid('message')"></textarea>
+        <div class="error" *ngIf="isInvalid('message')">
+          {{ 'CONTACT.MESSAGE_ERROR' | translate }}
+        </div>
 
+        <!-- Datenschutz -->
+        <hr class="divider" />
         <div class="privacy-checkbox">
           <input type="checkbox" id="privacy" formControlName="privacy" />
-
           <div class="privacy-label">
             <label for="privacy">
               {{ 'CONTACT.PRIVACY_TEXT' | translate }}
@@ -38,8 +52,11 @@
             </a>
           </div>
         </div>
+        <div class="error" *ngIf="isInvalid('privacy')">
+          {{ 'CONTACT.PRIVACY_ERROR' | translate }}
+        </div>
 
-
+        <!-- Absenden -->
         <button type="submit" class="submit-btn" [disabled]="!contactForm.valid">
           {{ 'CONTACT.SUBMIT_BUTTON' | translate }}
         </button>

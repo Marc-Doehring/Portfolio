@@ -51,7 +51,11 @@
     "MESSAGE_PLACEHOLDER": "Hello Marc, I am interested in...",
     "PRIVACY_TEXT": "I’ve read the",
     "PRIVACY_LINK": "privacy policy",
-    "SUBMIT_BUTTON": "Say Hello ;)"
+    "SUBMIT_BUTTON": "Say Hello ;)",
+    "NAME_ERROR": "Please enter your name (at least 2 characters).",
+    "EMAIL_ERROR": "Please enter a valid email address.",
+    "MESSAGE_ERROR": "Please enter a message (at least 10 characters).",
+    "PRIVACY_ERROR": "Please accept the privacy policy."
   },
   "FOOTER": {
     "ROLE": "Web Developer",
