@@ -2,7 +2,7 @@
 
 .myskills-section {
   width: 100%;
-  padding: 8rem 0;
+  padding: 6rem 0;
   color: vars.$color-white;
   background: radial-gradient(
     22.43% 43.85% at 1.22% 52.45%,
@@ -194,7 +194,7 @@
 
     .skills-right {
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
+      
 
       // img {
       //   max-width: 50px;
