@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -6,7 +6,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule,],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
@@ -59,6 +59,14 @@ this.translate.use(this.currentLang);
     this.setCurrentSection(section);
     this.mobileMenuOpen = false;
   }
+
+  @HostListener('window:scroll', [])
+onWindowScroll() {
+  if (this.mobileMenuOpen && window.innerWidth < 992) {
+    this.mobileMenuOpen = false;
+  }
+}
+
 
   scrollOrNavigate(event: Event) {
     event.preventDefault();

@@ -94,8 +94,13 @@
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 1rem;
+    text-decoration: none;
     color: vars.$color-white;
   }
+
+  .email:hover {
+  color: vars.$color-accent;
+}
 
   .email-icon {
     display: none;

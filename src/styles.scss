@@ -5,6 +5,7 @@ body {
   font-family: vars.$font-body;
   background-color: vars.$color-dark;
   margin: 0;
+  overflow-x: hidden;
 }
 
 html {
@@ -85,7 +86,7 @@ html {
     transition: transform 0.3s ease;
 
     &:hover {
-      content: url('/header/Logo_outline.png');
+      content: url('../public/header/Logo_outline.png');
     }
   }
 }
