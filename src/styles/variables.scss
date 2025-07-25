@@ -10,3 +10,8 @@ $background-color: rgba(8, 70, 59, 0.3);
 $font-body: 'Karla', sans-serif;
 $font-code: 'Fira Code', monospace;
 $font-mono: monospace;
+
+:root {
+  --color-accent: #3DCFB6;
+  --font-code: 'Fira Code', monospace;
+}
