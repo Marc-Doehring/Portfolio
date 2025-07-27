@@ -1,20 +1,27 @@
-<section class="say-about-me-section">
+<section class="say-about-me-section" (keydown.arrowLeft)="prev()" (keydown.arrowRight)="next()" tabindex="0">
   <div class="content-wrapper">
     <h3 class="section-label">{{ 'ABOUT_ME.WHAT_OTHERS_SAY' | translate }}</h3>
 
     <div class="carousel-wrapper">
-      
       <div class="quote-icon"></div>
 
-      <div class="carousel-mask">
-        <div class="carousel" [style.transform]="'translateX(-' + activeIndex * 100 + '%)'">
-          <div
-            class="testimonial"
-            *ngFor="let item of testimonials; let idx = index"
-          >
-            <p class="quote">{{ item.quote }}</p>
-            <p class="author">{{ item.author }}</p>
-          </div>
+      <div
+        class="carousel-3d"
+        (swipeleft)="next()"
+        (swiperight)="prev()"
+      >
+        <div
+          class="testimonial"
+          *ngFor="let item of testimonials; let idx = index"
+          [ngClass]="{
+            active: idx === activeIndex,
+            left: idx === getLeftIndex(),
+            right: idx === getRightIndex()
+          }"
+          (click)="handleClick(idx)"
+        >
+          <p class="quote">{{ item.quote }}</p>
+          <p class="author">{{ item.author }}</p>
         </div>
       </div>
 

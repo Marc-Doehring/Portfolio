@@ -1,0 +1,24 @@
+@use 'variables' as vars;
+
+.snackbar {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: vars.$color-accent;
+  color: vars.$color-white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-family: vars.$font-body;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  z-index: 999;
+
+  &.show {
+    opacity: 1;
+    bottom: 3rem;
+    pointer-events: auto;
+  }
+}
