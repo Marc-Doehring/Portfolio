@@ -53,10 +53,12 @@
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
+    gap: 50px;
+    margin-bottom: 100px;
 
     .project-list {
-      max-width: 800px;
-      min-width: 1000px;
+      
+      min-width: 900px;
       display: flex;
       flex-direction: column;
 
@@ -132,10 +134,23 @@
         }
       }
 
+      @media (max-width: 1400px) {
+        min-width: unset;
+        width: 850px;
+      }
+      @media (max-width: 1350px) {
+        min-width: unset;
+        width: 750px;
+      }
+      @media (max-width: 1250px) {
+        min-width: unset;
+        width: 700px;
+      }
       @media (max-width: 1200px) {
         min-width: unset;
-        width: 100%;
+        width: 600px;
       }
+
 
       @media (max-width: 600px) {
         .project-line {
