@@ -29,7 +29,7 @@
   .aboutme-image {
     flex: 1;
     position: relative;
-    top: -40px;
+    top: -20px;
 
     &::before {
       content: '';
@@ -46,8 +46,18 @@
       z-index: 0;
       pointer-events: none;
 
+      @media (max-width: 900px) {
+      max-width: 320px; // schrumpfen mit dem Bild
+      height: 320px;
+      left: 50px;      // leicht anpassen, damit es optisch sitzt
+      bottom: -20px;
+    }
+
       @media (max-width: 500px) {
-        display: none;
+      max-width: 280px; // schrumpfen mit dem Bild
+      height: 200px;
+      left: 30px;      // leicht anpassen, damit es optisch sitzt
+      bottom: -10px;
       }
     }
 
@@ -58,7 +68,13 @@
       border-radius: 1rem;
       position: relative;
       z-index: 1;
+
+      @media (max-width: 900px) {
+      width: 80%;      // nur noch 80% der Containerbreite
+      margin: 0 auto;  // mittig zentrieren
+      display: block;  // nötig für zentriertes margin
     }
+  }
   }
 
   .aboutme-textbox {

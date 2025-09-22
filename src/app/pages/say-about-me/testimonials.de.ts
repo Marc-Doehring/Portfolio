@@ -6,10 +6,10 @@ export const TESTIMONIALS = [
   },
   {
     quote: '„Während unserer gemeinsamen Projektarbeit konnte ich Marc als äußerst kompetenten und engagierten Kollegen kennenlernen. Besonders hervorzuheben ist die fachliche Tiefe, mit der Marc komplexe Probleme analysierte und innovative Lösungsansätze einbrachte. Darüber hinaus überzeugte Marc durch eine ausgeprägte Teamfähigkeit: stets hilfsbereit, motivierend und mit einem offenen Ohr für die Anliegen anderer. Diese Mischung aus Fachkompetenz und kollegialem Spirit hat unser Projekt entscheidend bereichert.“',
-    author: '– Christopher Heansch, Projetverantwortlicher'
+    author: '– Christopher Heansch, Teamkollege'
   },
   {
-    quote: '„Marc Döhring hat sich in unserem gemeinsamen Projekt als äußerst zuverlässig und teamorientiert erwiesen. Seine kreative Lösungen waren entscheidend für den Erfolg des Projekts. Marc war stets engagiert, kooperativ und ein wertvoller Partner – ich arbeite gerne mit ihm zusammen.“',
+    quote: '„Marc hat sich in unserem gemeinsamen Projekt als äußerst zuverlässig und teamorientiert erwiesen. Seine kreative Lösungen waren entscheidend für den Erfolg des Projekts. Marc war stets engagiert, kooperativ und ein wertvoller Partner – ich arbeite gerne mit ihm zusammen.“',
     author: '– Gaetano Leanza, Teamkollege'
   }
 ];
