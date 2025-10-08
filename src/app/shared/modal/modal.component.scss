@@ -6,7 +6,7 @@ $muted-text: #c2c2c2;
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  height: 100vh;
+  height: 100dvh;
   background: radial-gradient(ellipse at center, #0a1a16 0%, #020c0a 100%);
   backdrop-filter: blur(8px);
   z-index: 1000;
@@ -14,7 +14,7 @@ $muted-text: #c2c2c2;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  overflow: hidden;
+  overflow: auto;
 
   @media (max-width: 768px) {
     align-items: flex-start;
@@ -28,7 +28,7 @@ $muted-text: #c2c2c2;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
-  max-height: auto;
+  max-height: 90vh;
   overflow-y: auto;
   background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
   border-radius: 30px;
