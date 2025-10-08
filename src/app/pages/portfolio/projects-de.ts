@@ -12,8 +12,8 @@ export const PROJECTS_DE = [
       'portfolio/TypeScript.svg',
     ],
     description: 'Ein kollaborativer Aufgabenmanager, ähnlich wie Trello.',
-    liveLink: 'https://meine-app.com',
-    githubLink: 'https://github.com/myuser/myapp',
+    liveLink: 'http://www.marc-doehring.de/join/',
+    githubLink: 'https://github.com/Marc-Doehring/join',
   },
   {
     id: 2,
@@ -26,21 +26,35 @@ export const PROJECTS_DE = [
       'portfolio/HTML.svg',
     ],
     description: 'Ein Jump-and-Run-Browsergame mit Hühnern und Gegnern.',
-    liveLink: 'https://meine-app.com',
-    githubLink: 'https://github.com/Marc-Doehring'
+    liveLink: 'http://www.marc-doehring.de/el-pollo-loco/',
+    githubLink: 'https://github.com/Marc-Doehring/El_Pollo_Loco',
   },
   {
     id: 3,
-    title: 'DA Bubble',
-    stack: 'Angular | Firebase | TypeScript',
-    image: 'portfolio/bubble.png',
+    title: 'Pokedex',
+    stack: 'HTML | CSS | JavaScript',
+    image: 'portfolio/pokedex.png',
     icons: [
       'portfolio/javascript.svg',
       'portfolio/CSS.svg',
       'portfolio/HTML.svg',
     ],
-    description: 'Eine Echtzeit-Chat-App mit Angular und Firebase.',
-    liveLink: 'https://meine-app.com',
-    githubLink: 'https://github.com/myuser/myapp',
-  }
+    description: 'Eine einfache Bibliothek, basierend auf der PokéAPI die Pokémon-Informationen bereitstellt.',
+    liveLink: 'http://www.marc-doehring.de/pokedex/',
+    githubLink: 'https://github.com/Marc-Doehring/pokedex',
+  },
+  // {
+  //   id: 4,
+  //   title: 'PokeDex',
+  //   stack: 'Angular | Firebase | TypeScript',
+  //   image: 'portfolio/bubble.png',
+  //   icons: [
+  //     'portfolio/javascript.svg',
+  //     'portfolio/CSS.svg',
+  //     'portfolio/HTML.svg',
+  //   ],
+  //   description: 'Eine Echtzeit-Chat-App mit Angular und Firebase.',
+  //   liveLink: 'https://meine-app.com',
+  //   githubLink: 'https://github.com/myuser/myapp',
+  // }
 ];
